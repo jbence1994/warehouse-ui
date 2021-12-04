@@ -12,7 +12,7 @@ In the root of the project directory execute this command in command line or bas
 npm install
 ```
 
-## Run project
+### Run project
 
 In the root of the project directory execute this command in command line or bash terminal:
 
