@@ -1,38 +1,12 @@
 import restClient from "axios";
 
-const getSupplies = () => {
-  return [
-    {
-      id: 1,
-      product: {
-        name: "Product #1",
-        price: 100,
-        unit: "darab",
-        merchant: { name: "AcmeCorp." },
-      },
-      quantity: 10,
-    },
-    {
-      id: 2,
-      product: {
-        name: "Product #2",
-        price: 110,
-        unit: "darab",
-        merchant: { name: "AcmeCorp." },
-      },
-      quantity: 20,
-    },
-    {
-      id: 3,
-      product: {
-        name: "Product #3",
-        price: 120,
-        unit: "darab",
-        merchant: { name: "AcmeCorp." },
-      },
-      quantity: 30,
-    },
-  ];
+import endpoints from "./endpoints.json";
+
+const baseEndpoint = endpoints.base;
+
+const getSupplies = async () => {
+  const endpoint = `${baseEndpoint}${endpoints.supplies}`;
+  return await restClient.get(endpoint);
 };
 
 export { getSupplies };

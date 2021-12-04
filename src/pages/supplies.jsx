@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Card from "../components/common/card";
 
 import { getSupplies } from "../services/supplyService";
 
 const Supplies = () => {
-  // TODO: call api and clean up hard-coded data.
-  const supplies = getSupplies();
+  const [supplies, setSupplies] = useState([]);
+
+  useEffect(() => {
+    const populateSupplies = async () => {
+      const { data } = await getSupplies();
+      setSupplies(data);
+    };
+    populateSupplies();
+  }, []);
 
   return (
     <React.Fragment>
