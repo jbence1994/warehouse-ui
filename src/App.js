@@ -22,9 +22,11 @@ const App = () => {
   const { pages } = application;
   const { home, supplies, notFound } = pages;
 
+  const routes = [{ name: supplies.name, path: supplies.path }];
+
   return (
     <BrowserRouter>
-      <Navbar title={applicationName} homeRoute={home.path} routes={[]} />
+      <Navbar title={applicationName} homeRoute={home.path} routes={routes} />
       <main className="container">
         <Switch>
           <Route exact path={supplies.path} component={Supplies} />
