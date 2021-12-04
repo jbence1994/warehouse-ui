@@ -1,6 +1,5 @@
 {
-  "short_name": "warehouse-ui",
-  "name": "Warehouse UI",
+  "name": "warehouse-ui",
   "icons": [
     {
       "src": "favicon.ico",
