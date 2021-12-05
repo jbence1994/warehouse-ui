@@ -1,9 +1,9 @@
 import React from "react";
 
-const AddStockEntryForm = ({ labelText }) => {
+const AddSupplyEntryForm = () => {
   return (
     <form noValidate>
-      <label>{labelText}</label>
+      <label>Raktárkészlet növelése</label>
       <section className="row">
         <article className="col-6">
           <p>Article #1 col-6</p>
@@ -19,4 +19,4 @@ const AddStockEntryForm = ({ labelText }) => {
   );
 };
 
-export default AddStockEntryForm;
+export default AddSupplyEntryForm;
