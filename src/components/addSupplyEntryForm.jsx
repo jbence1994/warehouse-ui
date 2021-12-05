@@ -14,7 +14,11 @@ const AddSupplyEntryForm = ({ name, productId, content }) => {
     e.preventDefault();
   };
 
-  const handleNumberChange = () => {};
+  const handleNumberChange = ({ currentTarget: input }) => {
+    const updatedSupplyEntry = { ...supplyEntry };
+    updatedSupplyEntry[input.name] = parseInt(input.value);
+    setSupplyEntry(updatedSupplyEntry);
+  };
 
   return (
     <form onSubmit={handleSubmit} noValidate>
