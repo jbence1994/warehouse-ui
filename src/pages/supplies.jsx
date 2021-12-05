@@ -37,7 +37,11 @@ const Supplies = () => {
                 },
               ]}
             />
-            <AddSupplyEntryForm />
+            <AddSupplyEntryForm
+              name="quantity"
+              productId={product.id}
+              content={product.unit}
+            />
           </article>
         ))}
       </section>
