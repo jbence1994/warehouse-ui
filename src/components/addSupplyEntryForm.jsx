@@ -5,10 +5,14 @@ import TextInputDisabled from "./common/textInputDisabled";
 import Submit from "./common/submit";
 
 const AddSupplyEntryForm = ({ name, productId, content }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   const handleNumberChange = () => {};
 
   return (
-    <form noValidate>
+    <form onSubmit={handleSubmit} noValidate>
       <label>Raktárkészlet növelése</label>
       <section className="row">
         <article className="col-6">
