@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Card from "../components/common/card";
+import AddStockEntryForm from "../components/addStockEntryForm";
 
 import { getSupplies } from "../services/supplyService";
 
@@ -36,6 +37,7 @@ const Supplies = () => {
                 },
               ]}
             />
+            <AddStockEntryForm labelText="Raktárkészlet növelése" />
           </article>
         ))}
       </section>
