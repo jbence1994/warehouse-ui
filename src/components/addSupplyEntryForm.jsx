@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Counter from "./common/counter";
 import TextInputDisabled from "./common/textInputDisabled";
 import Submit from "./common/submit";
 
 const AddSupplyEntryForm = ({ name, productId, content }) => {
+  const [supplyEntry, setSupplyEntry] = useState({
+    productId: productId,
+    quantity: 0,
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
