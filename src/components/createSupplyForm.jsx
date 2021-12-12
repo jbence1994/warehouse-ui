@@ -4,14 +4,18 @@ import Counter from "./common/counter";
 import TextInputDisabled from "./common/textInputDisabled";
 import Submit from "./common/submit";
 
+import { createSupply } from "../services/supplyService";
+
 const CreateSupplyForm = ({ name, productId, content }) => {
   const [supply, setSupply] = useState({
     productId: productId,
     quantity: 0,
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    await createSupply(supply);
   };
 
   const handleNumberChange = ({ currentTarget: input }) => {
