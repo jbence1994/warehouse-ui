@@ -28,10 +28,9 @@ const Supplies = () => {
                 imageAlt={name}
                 contents={[
                   { key: 1, value: `Ár: ${price}.- Forint` },
-                  { key: 2, value: `Egység: ${unit}` },
-                  { key: 3, value: `Kereskedő: ${merchant.name}` },
+                  { key: 2, value: `Kereskedő: ${merchant.name}` },
                   {
-                    key: 4,
+                    key: 3,
                     // TODO: after available quantity update, re-render quantity.
                     value: `Jelenleg raktáron: ${availableQuantity} ${unit}`,
                   },
