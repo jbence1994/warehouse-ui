@@ -33,7 +33,7 @@ const Supplies = () => {
                   { key: 3, value: `Kereskedő: ${merchant.name}` },
                   {
                     key: 4,
-                    // TODO: after supply quantity update re-render quantity.
+                    // TODO: after available quantity update, re-render quantity.
                     value: `Jelenleg raktáron: ${availableQuantity} ${unit}`,
                   },
                 ]}
