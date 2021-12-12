@@ -22,7 +22,7 @@ const CreateSupplyForm = ({ name, productId, content }) => {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
-      <label>Raktárkészlet növelése</label>
+      <label>Hozzáadás a raktárkészlethez</label>
       <section className="row">
         <article className="col-6">
           <Counter name={name} minValue={1} onChange={handleNumberChange} />
