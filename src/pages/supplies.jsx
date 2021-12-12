@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 import Card from "../components/common/card";
-import AddSupplyEntryForm from "../components/addSupplyEntryForm";
 
 import { getProducts } from "../services/productService";
 
@@ -37,11 +36,6 @@ const Supplies = () => {
                     value: `Jelenleg raktáron: ${availableQuantity} ${unit}`,
                   },
                 ]}
-              />
-              <AddSupplyEntryForm
-                name="quantity"
-                productId={id}
-                content={unit}
               />
             </article>
           )
