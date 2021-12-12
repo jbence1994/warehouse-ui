@@ -1,5 +1,4 @@
 {
   "base": "http://localhost:5000/api/v1/",
-  "products": "products",
-  "includeMerchantWithProducts": "?includeMerchant=true"
+  "supplies": "supplies"
 }
