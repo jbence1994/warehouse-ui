@@ -4,8 +4,8 @@ import Counter from "./common/counter";
 import TextInputDisabled from "./common/textInputDisabled";
 import Submit from "./common/submit";
 
-const AddSupplyEntryForm = ({ name, productId, content }) => {
-  const [supplyEntry, setSupplyEntry] = useState({
+const CreateSupplyForm = ({ name, productId, content }) => {
+  const [supply, setSupply] = useState({
     productId: productId,
     quantity: 0,
   });
@@ -15,9 +15,9 @@ const AddSupplyEntryForm = ({ name, productId, content }) => {
   };
 
   const handleNumberChange = ({ currentTarget: input }) => {
-    const updatedSupplyEntry = { ...supplyEntry };
-    updatedSupplyEntry[input.name] = parseInt(input.value);
-    setSupplyEntry(updatedSupplyEntry);
+    const updatedSupply = { ...supply };
+    updatedSupply[input.name] = parseInt(input.value);
+    setSupply(updatedSupply);
   };
 
   return (
@@ -38,4 +38,4 @@ const AddSupplyEntryForm = ({ name, productId, content }) => {
   );
 };
 
-export default AddSupplyEntryForm;
+export default CreateSupplyForm;

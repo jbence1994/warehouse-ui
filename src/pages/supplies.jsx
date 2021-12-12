@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Card from "../components/common/card";
-import AddSupplyEntryForm from "../components/addSupplyEntryForm";
+import CreateSupplyForm from "../components/createSupplyForm";
 
 import { getProducts } from "../services/productService";
 
@@ -38,11 +38,7 @@ const Supplies = () => {
                   },
                 ]}
               />
-              <AddSupplyEntryForm
-                name="quantity"
-                productId={id}
-                content={unit}
-              />
+              <CreateSupplyForm name="quantity" productId={id} content={unit} />
             </article>
           )
         )}
