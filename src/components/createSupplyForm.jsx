@@ -15,7 +15,11 @@ const CreateSupplyForm = ({ name, productId, content }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await createSupply(supply);
+    const { data } = await createSupply(supply);
+    const { product } = data;
+    const { availableQuantity } = product;
+
+    console.log(availableQuantity);
   };
 
   const handleNumberChange = ({ currentTarget: input }) => {
