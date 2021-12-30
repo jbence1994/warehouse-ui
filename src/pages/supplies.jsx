@@ -3,9 +3,11 @@ import React, { useEffect, useState } from "react";
 import Card from "../components/common/card";
 import CreateSupplyForm from "../components/createSupplyForm";
 
+import { getProductPhotos } from "../services/productPhotoService";
 import { getProducts } from "../services/productService";
 
 const Supplies = () => {
+  const [productPhotos, setProductPhotos] = useState([]);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -13,11 +15,17 @@ const Supplies = () => {
       const { data } = await getProducts();
       setProducts(data);
     };
+    const populateProductPhotos = async () => {
+      const { data } = await getProductPhotos();
+      setProductPhotos(data);
+    };
+    populateProductPhotos();
     populateProducts();
   }, []);
 
   return (
     <React.Fragment>
+      {console.log(productPhotos)}
       <section className="row">
         {products.map(
           ({ id, name, price, unit, availableQuantity, merchant }) => (
