@@ -15,17 +15,15 @@ const ProductCard = ({ name, price, merchantName, photoFileName }) => {
   }
 
   return (
-    <React.Fragment>
-      <Card
-        title={name}
-        imageSource={imageSource}
-        imageAlt={name}
-        contents={[
-          { key: 1, value: `Ár: ${price}.- Forint` },
-          { key: 2, value: `Kereskedő: ${merchantName}` },
-        ]}
-      />
-    </React.Fragment>
+    <Card
+      title={name}
+      imageSource={imageSource}
+      imageAlt={name}
+      contents={[
+        { key: 1, value: `Ár: ${price}.- Forint` },
+        { key: 2, value: `Kereskedő: ${merchantName}` },
+      ]}
+    />
   );
 };
 
