@@ -5,8 +5,8 @@ import Card from "../components/common/card";
 import endpoints from "../api.endpoints.json";
 
 const ProductCard = ({ name, price, merchantName, photoFileName }) => {
-  const { base, getProductPhotos } = endpoints;
-  const imageSource = `${base}${getProductPhotos}${photoFileName}`;
+  const { base, getProductPhoto } = endpoints;
+  const imageSource = `${base}${getProductPhoto}${photoFileName}`;
 
   return (
     <React.Fragment>
