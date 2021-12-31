@@ -33,7 +33,7 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
 
   return (
     <React.Fragment>
-      <h6>
+      <h6 className="mb-4">
         Jelenleg raktáron: {productAvailableQuantity} {unit}
       </h6>
       <form onSubmit={handleSubmit} noValidate>
