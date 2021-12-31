@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Card from "../components/common/card";
+import ProductCard from "../components/productCard";
 import CreateSupplyForm from "../components/createSupplyForm";
 
 import { getProductPhotos } from "../services/productPhotoService";
@@ -15,6 +15,7 @@ const Supplies = () => {
       const { data } = await getProducts();
       setProducts(data);
     };
+
     const populateProductPhotos = async () => {
       const { data } = await getProductPhotos();
       setProductPhotos(data);
@@ -30,15 +31,10 @@ const Supplies = () => {
         {products.map(
           ({ id, name, price, unit, availableQuantity, merchant }) => (
             <article key={id} className="col-sm-12 col-md-12 col-lg-4">
-              <Card
-                title={name}
-                // TODO: call api to fetch photo of a product.
-                imageSource="https://picsum.photos/500"
-                imageAlt={name}
-                contents={[
-                  { key: 1, value: `Ár: ${price}.- Forint` },
-                  { key: 2, value: `Kereskedő: ${merchant.name}` },
-                ]}
+              <ProductCard
+                name={name}
+                price={price}
+                merchantName={merchant.name}
               />
               <CreateSupplyForm
                 name="quantity"
