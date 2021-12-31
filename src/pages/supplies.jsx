@@ -27,7 +27,7 @@ const Supplies = () => {
                 name={name}
                 price={price}
                 merchantName={merchant.name}
-                photoFileName={photo.fileName}
+                photoFileName={photo ? photo.fileName : ""}
               />
               <CreateSupplyForm
                 name="quantity"
