@@ -2,13 +2,17 @@ import React from "react";
 
 import Card from "../components/common/card";
 
-const ProductCard = ({ name, price, merchantName }) => {
+import endpoints from "../api.endpoints.json";
+
+const ProductCard = ({ name, price, merchantName, photoFileName }) => {
+  const { base, getProductPhotos } = endpoints;
+  const imageSource = `${base}${getProductPhotos}${photoFileName}`;
+
   return (
     <React.Fragment>
       <Card
         title={name}
-        // TODO: call api to fetch photo of a product.
-        imageSource="https://picsum.photos/500"
+        imageSource={imageSource}
         imageAlt={name}
         contents={[
           { key: 1, value: `Ár: ${price}.- Forint` },

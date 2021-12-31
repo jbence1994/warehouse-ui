@@ -2,6 +2,6 @@
   "base": "http://localhost:5000/api/v1/",
   "getProducts": "products",
   "includeMerchantWithProducts": "?includeMerchant=true",
-  "getProductPhotos": "products/photos",
+  "getProductPhotos": "products/photos/",
   "createSupply": "supplies"
 }
