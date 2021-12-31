@@ -12,24 +12,26 @@ const UploadPhotoForm = ({ productId }) => {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
-      <Submit text="Kép feltöltése" />
+      <div
+        style={{
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <input
+          type="file"
+          style={{
+            fontSize: "100px",
+            position: "absolute",
+            left: "0",
+            top: "0",
+            opacity: "0",
+          }}
+        />
+        <Submit text="Kép feltöltése" />
+      </div>
     </form>
   );
 };
 
 export default UploadPhotoForm;
-
-//TODO: CSS properties.
-
-/*.photo-upload {
-  position: relative;
-  overflow: hidden;
-}
-
-.photo-upload input[type="file"] {
-  font-size: 100px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}*/
