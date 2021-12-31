@@ -4,7 +4,7 @@ import Card from "../components/common/card";
 
 import endpoints from "../api.endpoints.json";
 
-import noImage from "../components/no-image.png";
+import noImage from "../images/no-image.png";
 
 const ProductCard = ({ name, price, merchantName, photoFileName }) => {
   const { base, getProductPhoto } = endpoints;
