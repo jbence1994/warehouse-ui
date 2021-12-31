@@ -7,11 +7,11 @@ import endpoints from "../api.endpoints.json";
 import noImage from "../images/no-image.png";
 
 const ProductCard = ({ name, price, merchantName, photoFileName }) => {
-  const { base, getProductPhoto } = endpoints;
+  const { base, uploadProductPhotoOrGetProductPhoto } = endpoints;
   let imageSource = noImage;
 
   if (photoFileName) {
-    imageSource = `${base}${getProductPhoto}${photoFileName}`;
+    imageSource = `${base}${uploadProductPhotoOrGetProductPhoto}${photoFileName}`;
   }
 
   return (
