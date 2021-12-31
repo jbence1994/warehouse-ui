@@ -33,11 +33,10 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
 
   return (
     <React.Fragment>
-      <h6>
+      <h6 className="mb-4">
         Jelenleg raktáron: {productAvailableQuantity} {unit}
       </h6>
       <form onSubmit={handleSubmit} noValidate>
-        <label>Raktárkészlet növelése</label>
         <section className="row">
           <article className="col-6">
             <Counter name={name} minValue={1} onChange={handleNumberChange} />
@@ -46,7 +45,7 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
             <TextInputDisabled content={unit} />
           </article>
           <article className="col-12">
-            <Submit />
+            <Submit text="Raktárkészlet növelése" />
           </article>
         </section>
       </form>
