@@ -11,7 +11,7 @@ const Card = ({ title, imageSource, imageAlt, contents }) => {
           height: "250px",
           display: "block",
           margin: "0 auto",
-          "object-fit": "fill",
+          objectFit: "fill",
         }}
         alt={imageAlt}
       />
