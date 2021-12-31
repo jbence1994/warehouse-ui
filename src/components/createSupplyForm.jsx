@@ -46,7 +46,7 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
             <TextInputDisabled content={unit} />
           </article>
           <article className="col-12">
-            <Submit />
+            <Submit text="Raktárkészlet növelése" />
           </article>
         </section>
       </form>
