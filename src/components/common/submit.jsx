@@ -1,6 +1,6 @@
 import React from "react";
 
-const Submit = ({ text = "Mentés", width = "100%" }) => {
+const Submit = ({ text, width = "100%" }) => {
   return (
     <div className="form-group">
       <button className="btn btn-primary" style={{ width: width }}>
