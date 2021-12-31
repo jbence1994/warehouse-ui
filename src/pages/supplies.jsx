@@ -30,14 +30,14 @@ const Supplies = () => {
                 contents={[
                   { key: 1, value: `Ár: ${price}.- Forint` },
                   { key: 2, value: `Kereskedő: ${merchant.name}` },
-                  {
-                    key: 3,
-                    // TODO: after available quantity update, re-render quantity.
-                    value: `Jelenleg raktáron: ${availableQuantity} ${unit}`,
-                  },
                 ]}
               />
-              <CreateSupplyForm name="quantity" productId={id} content={unit} />
+              <CreateSupplyForm
+                name="quantity"
+                productId={id}
+                availableQuantity={availableQuantity}
+                unit={unit}
+              />
             </article>
           )
         )}

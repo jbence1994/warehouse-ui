@@ -6,16 +6,23 @@ import Submit from "./common/submit";
 
 import { createSupply } from "../services/supplyService";
 
-const CreateSupplyForm = ({ name, productId, content }) => {
+const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
   const [supply, setSupply] = useState({
     productId: productId,
     quantity: 0,
   });
 
+  const [productAvailableQuantity, setProductAvailableQuantity] =
+    useState(availableQuantity);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await createSupply(supply);
+    const { data } = await createSupply(supply);
+    const { product } = data;
+    const { availableQuantity } = product;
+
+    setProductAvailableQuantity(availableQuantity);
   };
 
   const handleNumberChange = ({ currentTarget: input }) => {
@@ -25,20 +32,25 @@ const CreateSupplyForm = ({ name, productId, content }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
-      <label>Hozzáadás a raktárkészlethez</label>
-      <section className="row">
-        <article className="col-6">
-          <Counter name={name} minValue={1} onChange={handleNumberChange} />
-        </article>
-        <article className="col-6">
-          <TextInputDisabled content={content} />
-        </article>
-        <article className="col-12">
-          <Submit />
-        </article>
-      </section>
-    </form>
+    <React.Fragment>
+      <h6>
+        Jelenleg raktáron: {productAvailableQuantity} {unit}
+      </h6>
+      <form onSubmit={handleSubmit} noValidate>
+        <label>Raktárkészlet növelése</label>
+        <section className="row">
+          <article className="col-6">
+            <Counter name={name} minValue={1} onChange={handleNumberChange} />
+          </article>
+          <article className="col-6">
+            <TextInputDisabled content={unit} />
+          </article>
+          <article className="col-12">
+            <Submit />
+          </article>
+        </section>
+      </form>
+    </React.Fragment>
   );
 };
 
