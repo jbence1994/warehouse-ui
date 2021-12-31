@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Card from "../components/common/card";
+import ProductCard from "../components/productCard";
 import CreateSupplyForm from "../components/createSupplyForm";
 
 import { getProducts } from "../services/productService";
@@ -13,6 +13,7 @@ const Supplies = () => {
       const { data } = await getProducts();
       setProducts(data);
     };
+
     populateProducts();
   }, []);
 
@@ -20,17 +21,13 @@ const Supplies = () => {
     <React.Fragment>
       <section className="row">
         {products.map(
-          ({ id, name, price, unit, availableQuantity, merchant }) => (
+          ({ id, name, price, unit, availableQuantity, merchant, photo }) => (
             <article key={id} className="col-sm-12 col-md-12 col-lg-4">
-              <Card
-                title={name}
-                // TODO: call api to fetch photo of a product.
-                imageSource="https://picsum.photos/500"
-                imageAlt={name}
-                contents={[
-                  { key: 1, value: `Ár: ${price}.- Forint` },
-                  { key: 2, value: `Kereskedő: ${merchant.name}` },
-                ]}
+              <ProductCard
+                name={name}
+                price={price}
+                merchantName={merchant.name}
+                photoFileName={photo.fileName}
               />
               <CreateSupplyForm
                 name="quantity"
