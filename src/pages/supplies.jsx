@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import ProductCard from "../components/productCard";
 import CreateSupplyForm from "../components/createSupplyForm";
+import UploadPhotoForm from "../components/uploadPhotoForm";
 
 import { getProducts } from "../services/productService";
 
@@ -35,6 +36,7 @@ const Supplies = () => {
                 availableQuantity={availableQuantity}
                 unit={unit}
               />
+              {!photo && <UploadPhotoForm />}
             </article>
           )
         )}
