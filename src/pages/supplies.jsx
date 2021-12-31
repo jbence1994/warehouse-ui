@@ -36,7 +36,7 @@ const Supplies = () => {
                 availableQuantity={availableQuantity}
                 unit={unit}
               />
-              {!photo && <UploadPhotoForm />}
+              {!photo && <UploadPhotoForm productId={id} />}
             </article>
           )
         )}
