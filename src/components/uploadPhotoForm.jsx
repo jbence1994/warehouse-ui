@@ -8,8 +8,8 @@ const UploadPhotoForm = ({ productId }) => {
   const [photoToUpload, setPhotoToUpload] = useState({});
 
   const onPhotoUpload = (e) => {
-    const files = [...e.target.files];
-    setPhotoToUpload(files[0]);
+    const photo = [...e.target.files][0];
+    setPhotoToUpload(photo);
   };
 
   const handleSubmit = async (e) => {
