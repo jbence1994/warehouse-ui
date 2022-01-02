@@ -2,7 +2,7 @@ import React from "react";
 
 import Card from "../components/common/card";
 
-import endpoints from "../api.endpoints.json";
+import endpoints from "../config/api.endpoints.json";
 
 import noImage from "../images/no-image.png";
 
