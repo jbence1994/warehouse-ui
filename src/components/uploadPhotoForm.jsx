@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Submit from "./common/submit";
 
 import { uploadPhoto } from "../services/productPhotoService";
 
 const UploadPhotoForm = ({ productId }) => {
+  const [photoToUpload, setPhotoToUpload] = useState({});
+
+  const onPhotoUpload = (e) => {
+    const files = [...e.target.files];
+    setPhotoToUpload(files[0]);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Hello");
-    const { data } = await uploadPhoto(productId, null); //TODO: get photo obj.
+
+    const formData = new FormData();
+    formData.append("photoToUpload", photoToUpload);
+
+    const { data } = await uploadPhoto(productId, formData);
 
     console.log(data);
   };
@@ -23,6 +33,7 @@ const UploadPhotoForm = ({ productId }) => {
       >
         <input
           type="file"
+          onChange={onPhotoUpload}
           /*style={{
             fontSize: "100px",
             position: "absolute",
