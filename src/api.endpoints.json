@@ -4,5 +4,6 @@
   "includeMerchantWithProducts": "?includeMerchant=true",
   "getProductPhoto": "products/photos/",
   "createSupply": "supplies",
-  "getMerchantKeyValuePairs": "merchants/"
+  "getMerchants": "merchants",
+  "inKeyValuePairFormatWithProducts": "?keyValuePairs=true&includeProducts=true"
 }

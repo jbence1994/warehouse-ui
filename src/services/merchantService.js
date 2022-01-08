@@ -3,9 +3,9 @@ import restClient from "axios";
 import endpoints from "../api.endpoints.json";
 
 const getMerchantKeyValuePairs = async () => {
-  const { base, getMerchantKeyValuePairs } = endpoints;
+  const { base, getMerchants, inKeyValuePairFormatWithProducts } = endpoints;
 
-  const endpointToCall = `${base}${getMerchantKeyValuePairs}`;
+  const endpointToCall = `${base}${getMerchants}${inKeyValuePairFormatWithProducts}`;
 
   return await restClient.get(endpointToCall);
 };
