@@ -6,7 +6,7 @@ const getMerchantKeyValuePairs = async () => {
   const { base, getMerchantKeyValuePairs } = endpoints;
 
   const endpointToCall = `${base}${getMerchantKeyValuePairs}`;
-  console.log(endpointToCall);
+
   return await restClient.get(endpointToCall);
 };
 
