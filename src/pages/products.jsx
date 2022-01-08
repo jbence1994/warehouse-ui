@@ -1,13 +1,15 @@
 import React from "react";
 
-import MerchantsDropdown from "../components/merchantsDropdown";
+import CreateProductForm from "../components/createProductForm";
 
 const Products = () => {
-  const handleNumberChange = () => {
-    console.log("products.handleNumberChange.");
-  };
-
-  return <MerchantsDropdown handleNumberChange={handleNumberChange} />;
+  return (
+    <section className="row">
+      <article className="col-12">
+        <CreateProductForm />
+      </article>
+    </section>
+  );
 };
 
 export default Products;
