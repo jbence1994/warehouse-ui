@@ -3,5 +3,6 @@
   "getProducts": "products",
   "includeMerchantWithProducts": "?includeMerchant=true",
   "getProductPhoto": "products/photos/",
-  "createSupply": "supplies"
+  "createSupply": "supplies",
+  "getMerchantKeyValuePairs": "merchants/"
 }

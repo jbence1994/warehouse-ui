@@ -1,7 +1,13 @@
 import React from "react";
 
+import MerchantsDropdown from "../components/merchantsDropdown";
+
 const Products = () => {
-  return <h1>Products</h1>;
+  const handleNumberChange = () => {
+    console.log("Clicked...");
+  };
+
+  return <MerchantsDropdown handleNumberChange={handleNumberChange} />;
 };
 
 export default Products;
