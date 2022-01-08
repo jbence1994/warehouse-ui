@@ -4,7 +4,7 @@ import MerchantsDropdown from "../components/merchantsDropdown";
 
 const Products = () => {
   const handleNumberChange = () => {
-    console.log("Clicked...");
+    console.log("products.handleNumberChange.");
   };
 
   return <MerchantsDropdown handleNumberChange={handleNumberChange} />;
