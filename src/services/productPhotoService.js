@@ -1,11 +1,11 @@
 import restClient from "axios";
 
-import endpoints from "../config/api.endpoints.json";
+import endpoints from "../config/api.endpoints";
 
 const uploadPhoto = async (productId, photo) => {
-  const { base, uploadProductPhotoOrGetProductPhoto } = endpoints;
+  const { BASE, PRODUCT_PHOTOS, SLASH } = endpoints;
 
-  const endpointToCall = `${base}${uploadProductPhotoOrGetProductPhoto}${productId}`;
+  const endpointToCall = `${BASE}${PRODUCT_PHOTOS}${SLASH}${productId}`;
 
   return await restClient.post(endpointToCall, photo);
 };
