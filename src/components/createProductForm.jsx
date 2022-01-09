@@ -27,21 +27,21 @@ const CreateProductForm = () => {
           labelText="Termék neve"
           name="name"
           value=""
-          errorMessage="A termék nevének megadása kötelező."
+          errorMessage="A név megadása kötelező."
           onChange={handleTextChange}
         />
         <TextInput
           labelText="Mennyiségi egység"
           name="unit"
           value=""
-          errorMessage="A termék mennyiségi egységének megadása kötelező."
+          errorMessage="A mennyiségi egység megadása kötelező."
           onChange={handleTextChange}
         />
         <NumberInput
           labelText="Termék ára"
           name="price"
           value={0}
-          errorMessage="A termék árának megadása kötelező."
+          errorMessage="Az ár megadása kötelező."
           onChange={handleNumberChange}
         />
         <MerchantsDropdown handleNumberChange={handleNumberChange} />
