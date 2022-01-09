@@ -7,11 +7,9 @@ const getProducts = async (includeMerchants = true) => {
 
   let endpointToCall = BASE;
 
-  if (includeMerchants) {
-    endpointToCall += `${PRODUCTS}${PRODUCTS_INCLUDE_MERCHANT}`;
-  } else {
-    endpointToCall += `${PRODUCTS}`;
-  }
+  endpointToCall += includeMerchants
+    ? `${PRODUCTS}${PRODUCTS_INCLUDE_MERCHANT}`
+    : `${PRODUCTS}`;
 
   return await restClient.get(endpointToCall);
 };
