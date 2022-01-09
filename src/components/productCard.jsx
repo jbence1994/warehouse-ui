@@ -8,6 +8,7 @@ import noImage from "../images/no-image.png";
 
 const ProductCard = ({ name, price, merchantName, photoFileName }) => {
   const { BASE, PRODUCT_PHOTOS, SLASH } = endpoints;
+
   let imageSource = noImage;
 
   if (photoFileName) {
