@@ -1,5 +1,7 @@
 import React from "react";
 
+import TextInput from "./common/textInput";
+import NumberInput from "./common/numberInput";
 import MerchantsDropdown from "./merchantsDropdown";
 import Submit from "./common/submit";
 
@@ -10,6 +12,10 @@ const CreateProductForm = () => {
     console.log("Send new product to api.");
   };
 
+  const handleTextChange = ({ currentTarget: input }) => {
+    console.log("products.handleTextChange.", input.name, input.value);
+  };
+
   const handleNumberChange = ({ currentTarget: input }) => {
     console.log("products.handleNumberChange.", input.name, input.value);
   };
@@ -17,6 +23,27 @@ const CreateProductForm = () => {
   return (
     <React.Fragment>
       <form onSubmit={handleSubmit} noValidate>
+        <TextInput
+          labelText="Termék neve"
+          name="name"
+          value=""
+          errorMessage="A termék nevének megadása kötelező."
+          onChange={handleTextChange}
+        />
+        <TextInput
+          labelText="Mennyiségi egység"
+          name="unit"
+          value=""
+          errorMessage="A termék mennyiségi egységének megadása kötelező."
+          onChange={handleTextChange}
+        />
+        <NumberInput
+          labelText="Termék ára"
+          name="price"
+          value={0}
+          errorMessage="A termék árának megadása kötelező."
+          onChange={handleNumberChange}
+        />
         <MerchantsDropdown handleNumberChange={handleNumberChange} />
         <Submit text="Mentés" />
       </form>
