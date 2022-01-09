@@ -9,11 +9,9 @@ import noImage from "../images/no-image.png";
 const ProductCard = ({ name, price, merchantName, photoFileName }) => {
   const { BASE, PRODUCT_PHOTOS, SLASH } = endpoints;
 
-  let imageSource = noImage;
-
-  if (photoFileName) {
-    imageSource = `${BASE}${PRODUCT_PHOTOS}${SLASH}${photoFileName}`;
-  }
+  const imageSource = photoFileName
+    ? `${BASE}${PRODUCT_PHOTOS}${SLASH}${photoFileName}`
+    : noImage;
 
   return (
     <Card
