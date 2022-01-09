@@ -1,11 +1,11 @@
 import restClient from "axios";
 
-import endpoints from "../config/api.endpoints.json";
+import endpoints from "../config/api.endpoints";
 
 const createSupply = async (supply) => {
-  const { base, createSupply } = endpoints;
+  const { BASE, SUPPLIES } = endpoints;
 
-  const endpointToCall = `${base}${createSupply}`;
+  const endpointToCall = `${BASE}${SUPPLIES}`;
 
   return await restClient.post(endpointToCall, supply);
 };
