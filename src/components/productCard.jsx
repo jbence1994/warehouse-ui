@@ -2,16 +2,16 @@ import React from "react";
 
 import Card from "../components/common/card";
 
-import endpoints from "../config/api.endpoints.json";
+import endpoints from "../config/api.endpoints";
 
 import noImage from "../images/no-image.png";
 
 const ProductCard = ({ name, price, merchantName, photoFileName }) => {
-  const { base, uploadProductPhotoOrGetProductPhoto } = endpoints;
+  const { BASE, PRODUCT_PHOTOS, SLASH } = endpoints;
   let imageSource = noImage;
 
   if (photoFileName) {
-    imageSource = `${base}${uploadProductPhotoOrGetProductPhoto}${photoFileName}`;
+    imageSource = `${BASE}${PRODUCT_PHOTOS}${SLASH}${photoFileName}`;
   }
 
   return (
