@@ -6,11 +6,12 @@ import Supplies from "./pages/supplies";
 import NotFound from "./pages/notFound";
 import Home from "./pages/home";
 
+import APPLICATION_NAME from "./config/application-name";
+
 import "./App.css";
 
 const App = () => {
   const [application] = useState({
-    name: "Warehouse",
     pages: {
       home: { name: "Főoldal", path: "/" },
       supplies: { name: "Raktárkészlet", path: "/raktarkeszlet" },
@@ -18,7 +19,6 @@ const App = () => {
     },
   });
 
-  const { name: applicationName } = application;
   const { pages } = application;
   const { home, supplies, notFound } = pages;
 
@@ -26,7 +26,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Navbar title={applicationName} homeRoute={home.path} routes={routes} />
+      <Navbar title={APPLICATION_NAME} homeRoute={home.path} routes={routes} />
       <main className="container">
         <Switch>
           <Route exact path={supplies.path} component={Supplies} />
