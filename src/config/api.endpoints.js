@@ -1,17 +1,15 @@
 const endpoints = {
-  BASE: "http://localhost:5000/api/v1/",
-  AND: "&",
-  SLASH: "/",
+  API_ROOT: "http://localhost:5000/api/v1/",
   MERCHANTS: "merchants",
-  MERCHANTS_INCLUDE: "?includeProducts=true",
-  KEY_VALUE_PAIRS: "?keyValuePairs=true",
+  INCLUDE_PRODUCTS: "?includeProducts=true",
   ORDERS: "orders",
   PRODUCT_PHOTOS: "products/photos",
   PRODUCTS: "products",
-  PRODUCTS_INCLUDE_MERCHANT: "?includeMerchant=true",
+  INCLUDE_MERCHANT: "?includeMerchant=true",
   SUPPLIES: "supplies",
   TECHNICIANS: "technicians",
-  TECHNICIANS_INCLUDE_ORDERS: "?includeOrders=true",
+  INCLUDE_ORDERS: "?includeOrders=true",
+  AS_KEY_VALUE_PAIRS: "?keyValuePairs=true",
 };
 
 export default endpoints;
