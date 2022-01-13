@@ -15,9 +15,9 @@ const getProducts = async (includeMerchants = true) => {
 };
 
 const createProduct = async (product) => {
-  const { BASE, PRODUCTS } = endpoints;
+  const { API_ROOT, PRODUCTS } = endpoints;
 
-  const endpointToCall = `${BASE}${PRODUCTS}`;
+  const endpointToCall = `${API_ROOT}${PRODUCTS}`;
 
   return await restClient.post(endpointToCall, product);
 };
