@@ -3,21 +3,21 @@ import restClient from "axios";
 import endpoints from "../config/api.endpoints";
 
 const getProducts = async (includeMerchants = true) => {
-  const { BASE, PRODUCTS, PRODUCTS_INCLUDE_MERCHANT } = endpoints;
+  const { API_ROOT, PRODUCTS, INCLUDE_MERCHANT } = endpoints;
 
-  let endpointToCall = BASE;
+  let endpointToCall = API_ROOT;
 
   endpointToCall += includeMerchants
-    ? `${PRODUCTS}${PRODUCTS_INCLUDE_MERCHANT}`
+    ? `${PRODUCTS}${INCLUDE_MERCHANT}`
     : `${PRODUCTS}`;
 
   return await restClient.get(endpointToCall);
 };
 
 const createProduct = async (product) => {
-  const { BASE, PRODUCTS } = endpoints;
+  const { API_ROOT, PRODUCTS } = endpoints;
 
-  const endpointToCall = `${BASE}${PRODUCTS}`;
+  const endpointToCall = `${API_ROOT}${PRODUCTS}`;
 
   return await restClient.post(endpointToCall, product);
 };
