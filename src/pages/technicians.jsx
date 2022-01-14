@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Technicians = () => {
-  const technicians = [1, 2, 3, 4, 5];
+  const technicians = [1, 2, 3, 4];
 
   return (
     <ul>
