@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import Form from "./common/form";
 import TextInput from "./common/textInput";
 import NumberInput from "./common/numberInput";
 import MerchantsDropdown from "./merchantsDropdown";
@@ -37,7 +38,7 @@ const CreateProductForm = () => {
 
   return (
     <React.Fragment>
-      <form onSubmit={handleSubmit} noValidate>
+      <Form onSubmit={handleSubmit}>
         <TextInput
           labelText="Termék neve"
           name="name"
@@ -61,7 +62,7 @@ const CreateProductForm = () => {
         />
         <MerchantsDropdown onChange={handleNumberChange} />
         <Submit text="Mentés" />
-      </form>
+      </Form>
     </React.Fragment>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import Form from "./common/form";
 import Counter from "./common/counter";
 import TextInputDisabled from "./common/textInputDisabled";
 import Submit from "./common/submit";
@@ -36,7 +37,7 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
       <h6 className="mb-4">
         Jelenleg raktáron: {productAvailableQuantity} {unit}
       </h6>
-      <form onSubmit={handleSubmit} noValidate>
+      <Form onSubmit={handleSubmit}>
         <section className="row">
           <article className="col-6">
             <Counter name={name} minValue={1} onChange={handleNumberChange} />
@@ -48,7 +49,7 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
             <Submit text="Raktárkészlet növelése" />
           </article>
         </section>
-      </form>
+      </Form>
     </React.Fragment>
   );
 };
