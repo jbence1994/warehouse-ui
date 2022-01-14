@@ -62,7 +62,7 @@ const CreateProductForm = () => {
           errorMessage="Az ár megadása kötelező."
           onChange={handleNumberChange}
         />
-        <MerchantsDropdown handleNumberChange={handleNumberChange} />
+        <MerchantsDropdown onChange={handleNumberChange} />
         <Submit text="Mentés" />
       </form>
     </React.Fragment>
