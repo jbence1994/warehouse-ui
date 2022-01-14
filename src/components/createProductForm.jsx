@@ -18,9 +18,7 @@ const CreateProductForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { data } = await createProduct(product);
-
-    console.log(data);
+    await createProduct(product);
   };
 
   const handleTextChange = ({ currentTarget: input }) => {
