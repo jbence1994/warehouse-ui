@@ -35,30 +35,29 @@ const CreateProductForm = () => {
     setProduct(updatedProduct);
   };
 
+  const { name, unit, price } = product;
+
   return (
     <React.Fragment>
-      <h3>
-        <code>{JSON.stringify(product)}</code>
-      </h3>
       <form onSubmit={handleSubmit} noValidate>
         <TextInput
           labelText="Termék neve"
           name="name"
-          value=""
+          value={name}
           errorMessage="A név megadása kötelező."
           onChange={handleTextChange}
         />
         <TextInput
           labelText="Mennyiségi egység"
           name="unit"
-          value=""
+          value={unit}
           errorMessage="A mennyiségi egység megadása kötelező."
           onChange={handleTextChange}
         />
         <NumberInput
           labelText="Termék ára"
           name="price"
-          value={0}
+          value={price}
           errorMessage="Az ár megadása kötelező."
           onChange={handleNumberChange}
         />
