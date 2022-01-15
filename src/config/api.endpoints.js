@@ -9,7 +9,7 @@ const endpoints = {
   SUPPLIES: "supplies",
   TECHNICIANS: "technicians",
   INCLUDE_ORDERS: "?includeOrders=true",
-  AS_KEY_VALUE_PAIRS: "?keyValuePairs=true",
+  AS_KEY_VALUE_PAIR: "?asKeyValuePair=true",
 };
 
 export default endpoints;
