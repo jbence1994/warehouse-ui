@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
 import Form from "./common/form";
+import TechniciansDropdown from "./techniciansDropdown";
 
-import { createOrder } from "../services/orderService";
+//import { createOrder } from "../services/orderService";
 
 const CreateOrderForm = () => {
   const [order, setOrder] = useState({
@@ -18,7 +19,7 @@ const CreateOrderForm = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <legend>CreateOrderForm</legend>
+      <TechniciansDropdown />
     </Form>
   );
 };
