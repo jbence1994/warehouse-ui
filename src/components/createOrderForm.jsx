@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import Form from "./common/form";
+
 import { createOrder } from "../services/orderService";
 
 const CreateOrderForm = () => {
@@ -15,9 +17,9 @@ const CreateOrderForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
+    <Form onSubmit={handleSubmit}>
       <legend>CreateOrderForm</legend>
-    </form>
+    </Form>
   );
 };
 
