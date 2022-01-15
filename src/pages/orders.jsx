@@ -1,7 +1,9 @@
 import React from "react";
 
+import CreateOrderForm from "../components/createOrderForm";
+
 const Orders = () => {
-  return <h1>Orders page</h1>;
+  return <CreateOrderForm />;
 };
 
 export default Orders;
