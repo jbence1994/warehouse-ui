@@ -1,12 +1,13 @@
-//import restClient from "axios";
+import restClient from "axios";
+
+import endpoints from "../config/api.endpoints";
 
 const getTechnicians = async () => {
-  return {
-    data: [
-      { id: 1, name: "John Doe" },
-      { id: 2, name: "Jane Doe" },
-    ],
-  };
+  const { API_ROOT, TECHNICIANS, AS_KEY_VALUE_PAIR } = endpoints;
+
+  const endpointToCall = `${API_ROOT}${TECHNICIANS}${AS_KEY_VALUE_PAIR}`;
+
+  return await restClient.get(endpointToCall);
 };
 
 export { getTechnicians };
