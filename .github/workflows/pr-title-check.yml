@@ -10,4 +10,4 @@ jobs:
     steps:
       - uses: Slashgear/action-check-pr-title@v3.0.0
         with:
-          regexp: "([a-z])+"
+          regexp: "[[a-zA-Z]+s[a-zA-Z]+] -s([a-zA-Z]+( [a-zA-Z]+)+)"
