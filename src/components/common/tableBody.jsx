@@ -1,13 +1,21 @@
 import React from "react";
 
-const TableBody = () => {
+const TableBody = ({ collection, columns }) => {
+  const createKey = (item, column) => `${item.id}${column.value}`;
+
+  const renderCell = (item, column) => {
+    return null;
+  };
+
   return (
     <tbody>
-      <tr>
-        <td>[data]</td>
-        <td>[data]</td>
-        <td>[data]</td>
-      </tr>
+      {collection.map((item) => (
+        <tr key={item.id}>
+          {columns.map((column) => (
+            <td key={createKey(item, column)}>{renderCell(item, column)}</td>
+          ))}
+        </tr>
+      ))}
     </tbody>
   );
 };
