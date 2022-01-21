@@ -21,7 +21,7 @@ const TechnicianProfile = () => {
 
   return (
     <section className="row">
-      <article className="col-sm-12 col-md-12 col-lg-4">
+      <article className="col-sm-12 col-md-12 col-lg-6">
         <h1>Technician profile with id #{technician.id}</h1>
         <p>First name: {technician.firstName}</p>
         <p>Last name: {technician.lastName}</p>
@@ -29,7 +29,7 @@ const TechnicianProfile = () => {
         <p>Phone: {technician.phone}</p>
         <p>Balance: {technician.balance}</p>
       </article>
-      <article className="col-sm-12 col-md-12 col-lg-4">
+      <article className="col-sm-12 col-md-12 col-lg-6">
         <TechnicianOrdersTable />
       </article>
     </section>
