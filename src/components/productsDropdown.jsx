@@ -1,0 +1,29 @@
+import React, { useEffect, useState } from "react";
+
+import Dropdown from "../components/common/dropdown";
+import { getProducts } from "../services/productService";
+
+const ProductsDropdown = ({ onChange }) => {
+  const [productKeyValuePairs, setProductKeyValuePairs] = useState([]);
+
+  useEffect(() => {
+    const populateProductKeyValuePairs = async () => {
+      const { data } = await getProducts(false);
+      setProductKeyValuePairs(data);
+    };
+
+    populateProductKeyValuePairs();
+  }, []);
+
+  return (
+    <Dropdown
+      labelText="Termék"
+      name="productId"
+      errorMessage="A termék megadása kötelező."
+      data={productKeyValuePairs}
+      onChange={onChange}
+    />
+  );
+};
+
+export default ProductsDropdown;
