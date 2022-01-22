@@ -5,8 +5,8 @@ import getCurrentDate from "../services/dateService";
 const Home = () => {
   return (
     <div className="jumbotron">
-      <h1>Üdvözöljük!</h1>
-      <p>{getCurrentDate()}</p>
+      <h1 className="display-4">Üdvözöljük!</h1>
+      <p className="lead">{getCurrentDate()}</p>
     </div>
   );
 };

@@ -10,8 +10,12 @@ const Supplies = () => {
 
   useEffect(() => {
     const populateProducts = async () => {
-      const { data } = await getProducts();
-      setProducts(data);
+      try {
+        const { data } = await getProducts();
+        setProducts(data);
+      } catch (e) {
+        window.location.href = "/error";
+      }
     };
 
     populateProducts();
