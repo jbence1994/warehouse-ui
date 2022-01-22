@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import Form from "./common/form";
 import TechniciansDropdown from "./techniciansDropdown";
 
 //import { createOrder } from "../services/orderService";
@@ -18,9 +17,9 @@ const CreateOrderForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} noValidate>
       <TechniciansDropdown />
-    </Form>
+    </form>
   );
 };
 
