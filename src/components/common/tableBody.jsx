@@ -3,9 +3,7 @@ import React from "react";
 const TableBody = ({ collection, columns }) => {
   const createKey = (item, column) => `${item.id}${column.value}`;
 
-  const renderCell = (item, column) => {
-    return `${item}${column}`;
-  };
+  const renderCell = (item, column) => item[column.key];
 
   return (
     <tbody>
