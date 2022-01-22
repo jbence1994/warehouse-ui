@@ -2,14 +2,14 @@ import React from "react";
 
 import Table from "./common/table";
 
-const TechnicianOrdersTable = ({ collection }) => {
+const TechnicianOrdersTable = ({ technicianId }) => {
   const columns = [
-    { key: 1, value: "Rendelés azonosító" },
+    { key: 1, value: "Azonosító" },
     { key: 2, value: "Dátum" },
     { key: 3, value: "Végösszeg" },
   ];
 
-  return <Table collection={collection} columns={columns} />;
+  return <Table collection={[]} columns={columns} />;
 };
 
 export default TechnicianOrdersTable;
