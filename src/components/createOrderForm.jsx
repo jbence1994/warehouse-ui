@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 import TechniciansDropdown from "./techniciansDropdown";
 
-//import { createOrder } from "../services/orderService";
-
 const CreateOrderForm = () => {
   const [order, setOrder] = useState({
     technicianId: 0,
@@ -16,9 +14,15 @@ const CreateOrderForm = () => {
     console.log(JSON.stringify(order));
   };
 
+  const handleNumberChange = ({ currentTarget: input }) => {
+    const updatedOrder = { ...order };
+    updatedOrder[input.name] = parseInt(input.value);
+    setOrder(updatedOrder);
+  };
+
   return (
     <form onSubmit={handleSubmit} noValidate>
-      <TechniciansDropdown />
+      <TechniciansDropdown onChange={handleNumberChange} />
     </form>
   );
 };
