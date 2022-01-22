@@ -13,8 +13,12 @@ const TechnicianProfile = () => {
 
   useEffect(() => {
     const populateTechnician = async () => {
-      const { data } = await getTechnician(id);
-      setTechnician(data);
+      try {
+        const { data } = await getTechnician(id);
+        setTechnician(data);
+      } catch (e) {
+        window.location.href = "/error";
+      }
     };
 
     populateTechnician();
