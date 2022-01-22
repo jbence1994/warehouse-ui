@@ -23,7 +23,7 @@ const TechnicianOrdersTable = ({ technicianId }) => {
 
   return (
     <Table
-      caption="Egyenleg info"
+      caption="Egyenleg kivonat"
       collection={technicianBalances}
       columns={columns}
     />
