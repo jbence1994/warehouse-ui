@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import ProductCard from "../components/productCard";
 import CreateSupplyForm from "../components/createSupplyForm";
-import UploadPhotoForm from "../components/uploadPhotoForm";
 
 import { getProducts } from "../services/productService";
 
@@ -28,6 +27,7 @@ const Supplies = () => {
         ({ id, name, price, unit, availableQuantity, merchant, photo }) => (
           <article key={id} className="col-sm-12 col-md-12 col-lg-4">
             <ProductCard
+              id={id}
               name={name}
               price={price}
               merchantName={merchant.name}
@@ -39,7 +39,6 @@ const Supplies = () => {
               availableQuantity={availableQuantity}
               unit={unit}
             />
-            {!photo && <UploadPhotoForm productId={id} />}
           </article>
         )
       )}
