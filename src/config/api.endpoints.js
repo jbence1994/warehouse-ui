@@ -8,7 +8,6 @@ const endpoints = {
   INCLUDE_MERCHANT: "?includeMerchant=true",
   SUPPLIES: "supplies",
   TECHNICIANS: "technicians",
-  INCLUDE_ORDERS: "?includeOrders=true",
   AS_KEY_VALUE_PAIR: "?asKeyValuePair=true",
 };
 

@@ -4,7 +4,7 @@ const TableBody = ({ collection, columns }) => {
   const createKey = (item, column) => `${item.id}${column.value}`;
 
   const renderCell = (item, column) => {
-    return null;
+    return `${item}${column}`;
   };
 
   return (

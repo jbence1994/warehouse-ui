@@ -8,7 +8,7 @@ import { getTechnician } from "../services/technicianService";
 const TechnicianProfile = () => {
   const { id } = useParams();
 
-  const [technician, setTechnician] = useState([]);
+  const [technician, setTechnician] = useState({});
 
   useEffect(() => {
     const populateTechnician = async () => {
@@ -23,14 +23,13 @@ const TechnicianProfile = () => {
     <section className="row">
       <article className="col-sm-12 col-md-12 col-lg-6">
         <h1>Technician profile with id #{technician.id}</h1>
-        <p>First name: {technician.firstName}</p>
-        <p>Last name: {technician.lastName}</p>
-        <p>Email: {technician.email}</p>
-        <p>Phone: {technician.phone}</p>
-        <p>Balance: {technician.balance}</p>
+        <p>Név: {technician.name}</p>
+        <p>E-mail cím: {technician.email}</p>
+        <p>Telefonszám: {technician.phone}</p>
+        <p>Egyenleg: {technician.balance} Forint</p>
       </article>
       <article className="col-sm-12 col-md-12 col-lg-6">
-        <TechnicianOrdersTable />
+        <TechnicianOrdersTable collection={[{ id: 1 }]} />
       </article>
     </section>
   );

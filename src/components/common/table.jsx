@@ -3,13 +3,7 @@ import React from "react";
 import TableHeader from "./tableHeader";
 import TableBody from "./tableBody";
 
-const Table = ({ columns }) => {
-  const collection = [
-    { id: "1", path: "id" },
-    { id: "2", path: "createdDateTime" },
-    { id: "3", path: "total" },
-  ];
-
+const Table = ({ collection, columns }) => {
   return (
     <table className="table table-responsive table-hover">
       <TableHeader columns={columns} />
