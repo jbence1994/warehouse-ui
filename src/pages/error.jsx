@@ -9,7 +9,7 @@ const Error = () => {
       <p className="lead">Hiba történt a hálózati kapcsolatban...</p>
       <hr className="my-4" />
       <p>
-        Próbálkozzon később újraindítani az oldalt vagy ellenőrízze az
+        Próbálja meg később újraindítani az oldalt vagy ellenőrízze az
         internetkapcsolatot.
       </p>
       <p className="lead">
