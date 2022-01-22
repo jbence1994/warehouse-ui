@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import TechniciansDropdown from "./techniciansDropdown";
+import Submit from "./common/submit";
 
 const CreateOrderForm = () => {
   const [order, setOrder] = useState({
@@ -23,6 +24,7 @@ const CreateOrderForm = () => {
   return (
     <form onSubmit={handleSubmit} noValidate>
       <TechniciansDropdown onChange={handleNumberChange} />
+      <Submit text="Vásárlás rögzítése" />
     </form>
   );
 };
