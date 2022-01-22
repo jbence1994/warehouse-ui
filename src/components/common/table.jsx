@@ -7,7 +7,7 @@ const Table = ({ caption, collection, columns }) => {
   return (
     <React.Fragment>
       <h5>{caption}</h5>
-      <table className="table table-responsive table-hover">
+      <table className="table table-responsive table-hover text-center">
         <TableHeader columns={columns} />
         <TableBody collection={collection} columns={columns} />
       </table>
