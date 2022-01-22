@@ -17,7 +17,6 @@ const TechnicianOrdersTable = ({ technicianId }) => {
   }, [technicianId]);
 
   const columns = [
-    { key: "id", value: "Azonosító" },
     { key: "createdDateTime", value: "Dátum" },
     { key: "total", value: "Végösszeg" },
   ];
