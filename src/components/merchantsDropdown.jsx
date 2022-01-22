@@ -9,8 +9,12 @@ const MerchantsDropdown = ({ onChange }) => {
 
   useEffect(() => {
     const populateMerchantKeyValuePairs = async () => {
-      const { data } = await getMerchantKeyValuePairs();
-      setMerchantKeyValuePairs(data);
+      try {
+        const { data } = await getMerchantKeyValuePairs();
+        setMerchantKeyValuePairs(data);
+      } catch (e) {
+        window.location.href = "/error";
+      }
     };
 
     populateMerchantKeyValuePairs();
