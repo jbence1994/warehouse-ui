@@ -7,6 +7,7 @@ import TechnicianProfile from "./pages/technicianProfile";
 import Technicians from "./pages/technicians";
 import Products from "./pages/products";
 import Supplies from "./pages/supplies";
+import Error from "./pages/error";
 import NotFound from "./pages/notFound";
 import Home from "./pages/home";
 
@@ -24,6 +25,7 @@ const App = () => {
     TECHNICIANS_PAGE,
     ORDERS_PAGE,
     NOT_FOUND_PAGE,
+    ERROR_PAGE,
   } = pages;
 
   return (
@@ -49,6 +51,7 @@ const App = () => {
           <Route exact path={TECHNICIANS_PAGE.path} component={Technicians} />
           <Route exact path={PRODUCTS_PAGE.path} component={Products} />
           <Route exact path={SUPPLIES_PAGE.path} component={Supplies} />
+          <Route exact path={ERROR_PAGE.path} component={Error} />
           <Route exact path={NOT_FOUND_PAGE.path} component={NotFound} />
           <Route exact path={HOME_PAGE.path} component={Home} />
           <Redirect to={NOT_FOUND_PAGE.path} />

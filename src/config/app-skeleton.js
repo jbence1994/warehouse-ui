@@ -25,7 +25,11 @@ const pages = {
   },
   NOT_FOUND_PAGE: {
     name: "A keresett oldal nem található",
-    path: "/hiba",
+    path: "/notFound",
+  },
+  ERROR_PAGE: {
+    name: "Hiba történt",
+    path: "/error",
   },
 };
 
