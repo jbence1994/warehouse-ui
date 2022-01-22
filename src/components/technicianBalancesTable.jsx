@@ -22,7 +22,13 @@ const TechnicianOrdersTable = ({ technicianId }) => {
     { key: 3, value: "Összeg" },
   ];
 
-  return <Table collection={technicianBalances} columns={columns} />;
+  return (
+    <Table
+      caption="Egyenleg info"
+      collection={technicianBalances}
+      columns={columns}
+    />
+  );
 };
 
 export default TechnicianOrdersTable;
