@@ -23,7 +23,6 @@ const TechnicianProfile = () => {
   return (
     <section className="row">
       <article className="col-sm-12 col-md-12 col-lg-4">
-        <h1>Technician profile with id #{technician.id}</h1>
         <p>Név: {technician.name}</p>
         <p>E-mail cím: {technician.email}</p>
         <p>Telefonszám: {technician.phone}</p>
