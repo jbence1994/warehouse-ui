@@ -18,28 +18,26 @@ const Supplies = () => {
   }, []);
 
   return (
-    <React.Fragment>
-      <section className="row">
-        {products.map(
-          ({ id, name, price, unit, availableQuantity, merchant, photo }) => (
-            <article key={id} className="col-sm-12 col-md-12 col-lg-4">
-              <ProductCard
-                name={name}
-                price={price}
-                merchantName={merchant.name}
-                photoFileName={photo ? photo.fileName : ""}
-              />
-              <CreateSupplyForm
-                name="quantity"
-                productId={id}
-                availableQuantity={availableQuantity}
-                unit={unit}
-              />
-            </article>
-          )
-        )}
-      </section>
-    </React.Fragment>
+    <section className="row">
+      {products.map(
+        ({ id, name, price, unit, availableQuantity, merchant, photo }) => (
+          <article key={id} className="col-sm-12 col-md-12 col-lg-4">
+            <ProductCard
+              name={name}
+              price={price}
+              merchantName={merchant.name}
+              photoFileName={photo ? photo.fileName : ""}
+            />
+            <CreateSupplyForm
+              name="quantity"
+              productId={id}
+              availableQuantity={availableQuantity}
+              unit={unit}
+            />
+          </article>
+        )
+      )}
+    </section>
   );
 };
 
