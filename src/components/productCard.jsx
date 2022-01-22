@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { uploadPhoto } from "../services/productPhotoService";
 
@@ -7,6 +7,8 @@ import endpoints from "../config/api.endpoints";
 import noImage from "../images/no-image.png";
 
 const ProductCard = ({ id, name, price, merchantName, photoFileName }) => {
+  const [uploadedPhotoFileName, setUploadedPhotoFileName] = useState("");
+
   const handlePhotoUpload = async (e) => {
     const photo = [...e.target.files][0];
 
@@ -14,14 +16,22 @@ const ProductCard = ({ id, name, price, merchantName, photoFileName }) => {
     formData.append("photoToUpload", photo);
 
     const { data } = await uploadPhoto(id, formData);
-    console.log(data);
+    const { fileName } = data;
+
+    setUploadedPhotoFileName(fileName);
   };
 
   const { API_ROOT, PRODUCT_PHOTOS } = endpoints;
 
-  const imageSource = photoFileName
-    ? `${API_ROOT}${PRODUCT_PHOTOS}/${photoFileName}`
-    : noImage;
+  let imageSource;
+
+  if (photoFileName) {
+    imageSource = `${API_ROOT}${PRODUCT_PHOTOS}/${photoFileName}`;
+  } else if (uploadedPhotoFileName) {
+    imageSource = `${API_ROOT}${PRODUCT_PHOTOS}/${uploadedPhotoFileName}`;
+  } else {
+    imageSource = noImage;
+  }
 
   const cardContents = [
     { key: 1, value: `Ár: ${price}.- Forint` },
@@ -58,9 +68,9 @@ const ProductCard = ({ id, name, price, merchantName, photoFileName }) => {
       </label>
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
-        {cardContents.map((content) => (
-          <p className="card-text" key={content.key}>
-            {content.value}
+        {cardContents.map(({ key, value }) => (
+          <p className="card-text" key={key}>
+            {value}
           </p>
         ))}
       </div>
