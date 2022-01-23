@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 
 import Dropdown from "../components/common/dropdown";
 
-import { getTechnicians } from "../services/techniciansService";
+import { getTechnicianKeyValuePairs } from "../services/techniciansService";
 
 const TechniciansDropdown = ({ onChange }) => {
   const [technicianKeyValuePairs, setTechnicianKeyValuePairs] = useState([]);
 
   useEffect(() => {
     const populateTechnicianKeyValuePairs = async () => {
-      const { data } = await getTechnicians();
+      const { data } = await getTechnicianKeyValuePairs();
       setTechnicianKeyValuePairs(data);
     };
 
