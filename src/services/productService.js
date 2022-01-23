@@ -14,4 +14,12 @@ const getProducts = async (includeMerchants = true) => {
   return await restClient.get(endpointToCall);
 };
 
-export { getProducts };
+const getProductKeyValuePairs = async () => {
+  const { API_ROOT, PRODUCTS, AS_KEY_VALUE_PAIR } = endpoints;
+
+  const endpointToCall = `${API_ROOT}${PRODUCTS}${AS_KEY_VALUE_PAIR}`;
+
+  return await restClient.get(endpointToCall);
+};
+
+export { getProducts, getProductKeyValuePairs };

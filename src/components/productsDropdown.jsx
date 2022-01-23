@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 
 import Dropdown from "../components/common/dropdown";
-import { getProducts } from "../services/productService";
+
+import { getProductKeyValuePairs } from "../services/productService";
 
 const ProductsDropdown = ({ onChange }) => {
   const [productKeyValuePairs, setProductKeyValuePairs] = useState([]);
 
   useEffect(() => {
     const populateProductKeyValuePairs = async () => {
-      const { data } = await getProducts(false);
+      const { data } = await getProductKeyValuePairs();
       setProductKeyValuePairs(data);
     };
 
