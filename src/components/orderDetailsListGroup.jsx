@@ -4,10 +4,10 @@ import ListGroup from "./common/listGroup";
 
 const OrderDetailsListGroup = ({ collection }) => {
   return (
-    <React.Fragment>
-      <h4>Rendelés részletei</h4>
+    <div className="form-group">
+      <h5>Rendelés részletei</h5>
       <ListGroup collection={collection} />
-    </React.Fragment>
+    </div>
   );
 };
 export default OrderDetailsListGroup;
