@@ -26,6 +26,7 @@ const CreateOrderDetailForm = () => {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
+      <code>OrderDetail: {JSON.stringify(orderDetail)}</code>
       <ProductsDropdown onChange={handleNumberChange} />
       <NumberInput
         labelText="Mennyiség"
@@ -35,7 +36,6 @@ const CreateOrderDetailForm = () => {
         onChange={handleNumberChange}
       />
       <Submit text="Hozzáaáds a vásárláshoz" />
-      <h4>OrderDetail: {JSON.stringify(orderDetail)}</h4>
     </form>
   );
 };

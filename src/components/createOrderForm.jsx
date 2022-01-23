@@ -22,8 +22,8 @@ const CreateOrderForm = () => {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
+      <code>Order: {JSON.stringify(order)}</code>
       <TechniciansDropdown onChange={handleNumberChange} />
-      <h4>Order: {JSON.stringify(order)}</h4>
     </form>
   );
 };
