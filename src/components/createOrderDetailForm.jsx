@@ -4,7 +4,7 @@ import ProductsDropdown from "./productsDropdown";
 import NumberInput from "./common/numberInput";
 import Submit from "./common/submit";
 
-const CreateOrderDetailForm = () => {
+const CreateOrderDetailForm = ({ quantity }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -23,7 +23,7 @@ const CreateOrderDetailForm = () => {
       <NumberInput
         labelText="Mennyiség"
         name="quantity"
-        value={orderDetail.quantity}
+        value={quantity}
         errorMessage="A mennyiség megadása kötelező"
         onChange={handleNumberChange}
       />

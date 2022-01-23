@@ -28,16 +28,10 @@ const Orders = () => {
       <section className="row">
         <article className="col-sm-12 col-md-12 col-lg-6">
           <CreateOrderForm />
-          <CreateOrderDetailForm />
+          <CreateOrderDetailForm quantity={orderDetail.quantity} />
         </article>
         <article className="col-sm-12 col-md-12 col-lg-6">
-          <OrderDetailsListGroup
-            collection={[
-              { key: 1, value: "Antenna tartókonzol x 1 darab" },
-              { key: 2, value: "Vörösréz x 2 darab" },
-              { key: 3, value: "6-os anyacsavar x 5 darab" },
-            ]}
-          />
+          <OrderDetailsListGroup collection={order.orderDetails} />
         </article>
       </section>
     </React.Fragment>
