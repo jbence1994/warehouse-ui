@@ -2,14 +2,10 @@ import restClient from "axios";
 
 import endpoints from "../config/api.endpoints";
 
-const getProducts = async (includeMerchants = true) => {
-  const { API_ROOT, PRODUCTS, INCLUDE_MERCHANT } = endpoints;
+const getProducts = async () => {
+  const { API_ROOT, PRODUCTS } = endpoints;
 
-  let endpointToCall = API_ROOT;
-
-  endpointToCall += includeMerchants
-    ? `${PRODUCTS}${INCLUDE_MERCHANT}`
-    : `${PRODUCTS}`;
+  const endpointToCall = `${API_ROOT}${PRODUCTS}`;
 
   return await restClient.get(endpointToCall);
 };
