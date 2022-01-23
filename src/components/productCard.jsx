@@ -33,7 +33,7 @@ const ProductCard = ({ id, name, price, merchantName, photoFileName }) => {
     imageSource = noImage;
   }
 
-  const cardContents = [
+  const contents = [
     { key: 1, value: `Ár: ${price}.- Forint` },
     { key: 2, value: `Kereskedő: ${merchantName}` },
   ];
@@ -68,7 +68,7 @@ const ProductCard = ({ id, name, price, merchantName, photoFileName }) => {
       </label>
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
-        {cardContents.map(({ key, value }) => (
+        {contents.map(({ key, value }) => (
           <p className="card-text" key={key}>
             {value}
           </p>
