@@ -1,32 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 
 import ProductsDropdown from "./productsDropdown";
 import NumberInput from "./common/numberInput";
 import Submit from "./common/submit";
 
 const CreateOrderDetailForm = () => {
-  const [orderDetail, setOrderDetail] = useState({
-    productId: 0,
-    quantity: 0,
-  });
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(JSON.stringify(orderDetail));
-
-    setOrderDetail({ productId: 0, quantity: 0 });
+    /*setOrderDetail({ productId: 0, quantity: 0 });*/
   };
 
   const handleNumberChange = ({ currentTarget: input }) => {
-    const updatedOrderDetail = { ...orderDetail };
+    /*const updatedOrderDetail = { ...orderDetail };
     updatedOrderDetail[input.name] = parseInt(input.value);
-    setOrderDetail(updatedOrderDetail);
+    setOrderDetail(updatedOrderDetail);*/
   };
 
   return (
     <form onSubmit={handleSubmit} noValidate>
-      <code>OrderDetail: {JSON.stringify(orderDetail)}</code>
       <ProductsDropdown onChange={handleNumberChange} />
       <NumberInput
         labelText="Mennyiség"
