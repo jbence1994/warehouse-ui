@@ -15,7 +15,7 @@ const CreateOrderDetailForm = () => {
 
     console.log(JSON.stringify(orderDetail));
 
-    setOrderDetail({ product: 0, quantity: 0 });
+    setOrderDetail({ productId: 0, quantity: 0 });
   };
 
   const handleNumberChange = ({ currentTarget: input }) => {
