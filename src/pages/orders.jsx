@@ -6,16 +6,10 @@ import NumberInput from "../components/common/numberInput";
 import OrderDetailsListGroup from "../components/orderDetailsListGroup";
 import Submit from "../components/common/submit";
 
-// TODO: Raise events from components.
-
 const Orders = () => {
   const [order, setOrder] = useState({
     technicianId: 0,
-    orderDetails: [
-      { key: 1, value: "Antenna tartókonzol" },
-      { key: 2, value: "Vörösréz" },
-      { key: 3, value: "6-os anyacsavar" },
-    ],
+    orderDetails: [],
   });
 
   const [orderDetail, setOrderDetail] = useState({
@@ -23,14 +17,26 @@ const Orders = () => {
     quantity: 0,
   });
 
+  const handleOrderDetailAdd = (e) => {
+    e.preventDefault();
+
+    const updatedOrder = { ...order };
+    updatedOrder.orderDetails.push(orderDetail);
+    setOrder(updatedOrder);
+    setOrderDetail({ productId: 0, quantity: 0 });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
-  const handleNumberChange = ({ currentTarget: input }) => {
-    /*const updatedOrder = { ...order };
+  const handleOrderRelatedNumberChange = ({ currentTarget: input }) => {
+    const updatedOrder = { ...order };
     updatedOrder[input.name] = parseInt(input.value);
-    setOrder(updatedOrder);*/
+    setOrder(updatedOrder);
+  };
+
+  const handleOrderDetailRelatedNumberChange = ({ currentTarget: input }) => {
     const updatedOrderDetail = { ...orderDetail };
     updatedOrderDetail[input.name] = parseInt(input.value);
     setOrderDetail(updatedOrderDetail);
@@ -38,22 +44,16 @@ const Orders = () => {
 
   return (
     <React.Fragment>
-      <h5>
-        <code>Order: {JSON.stringify(order)}</code>
-      </h5>
-      <h5>
-        <code>OrderDetail: {JSON.stringify(orderDetail)}</code>
-      </h5>
       <section className="row">
         <article className="col-sm-12 col-md-12 col-lg-6">
-          <form onSubmit={handleSubmit} noValidate>
-            <TechniciansDropdown onChange={handleNumberChange} />
-            <ProductsDropdown onChange={handleNumberChange} />
+          <form onSubmit={handleOrderDetailAdd} noValidate>
+            <TechniciansDropdown onChange={handleOrderRelatedNumberChange} />
+            <ProductsDropdown onChange={handleOrderDetailRelatedNumberChange} />
             <NumberInput
               name="quantity"
               labelText="Mennyiség"
               minValue={1}
-              onChange={handleNumberChange}
+              onChange={handleOrderDetailRelatedNumberChange}
               errorMessage="A mennyiség megadása kötelező."
             />
             <Submit text="Hozzáadás" />
@@ -66,6 +66,12 @@ const Orders = () => {
           </form>
         </article>
       </section>
+      <h5>
+        <code>Order: {JSON.stringify(order)}</code>
+      </h5>
+      <h5>
+        <code>OrderDetail: {JSON.stringify(orderDetail)}</code>
+      </h5>
     </React.Fragment>
   );
 };
