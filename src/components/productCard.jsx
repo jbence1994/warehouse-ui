@@ -56,12 +56,11 @@ const ProductCard = ({ id, name, price, merchantName, photoFileName }) => {
         <input
           type="file"
           id="photo-upload"
+          className="form-control-file"
           onChange={handlePhotoUpload}
           style={{
-            fontSize: "100px",
             position: "absolute",
-            left: "0",
-            top: "0",
+            inset: "0",
             opacity: "0",
           }}
         />
