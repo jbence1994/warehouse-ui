@@ -31,9 +31,9 @@ const Orders = () => {
     /*const updatedOrder = { ...order };
     updatedOrder[input.name] = parseInt(input.value);
     setOrder(updatedOrder);*/
-    /*const updatedOrderDetail = { ...orderDetail };
+    const updatedOrderDetail = { ...orderDetail };
     updatedOrderDetail[input.name] = parseInt(input.value);
-    setOrderDetail(updatedOrderDetail);*/
+    setOrderDetail(updatedOrderDetail);
   };
 
   return (
@@ -50,11 +50,11 @@ const Orders = () => {
             <TechniciansDropdown onChange={handleNumberChange} />
             <ProductsDropdown onChange={handleNumberChange} />
             <NumberInput
-              labelText="Mennyiség"
               name="quantity"
-              value={orderDetail.quantity}
-              errorMessage="A mennyiség megadása kötelező"
+              labelText="Mennyiség"
+              minValue={1}
               onChange={handleNumberChange}
+              errorMessage="A mennyiség megadása kötelező."
             />
             <Submit text="Hozzáadás" />
           </form>

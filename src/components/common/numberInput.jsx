@@ -1,6 +1,6 @@
 import React from "react";
 
-const NumberInput = ({ labelText, name, value, errorMessage, onChange }) => {
+const NumberInput = ({ name, labelText, minValue, onChange, errorMessage }) => {
   return (
     <React.Fragment>
       <div className="form-group">
@@ -8,10 +8,9 @@ const NumberInput = ({ labelText, name, value, errorMessage, onChange }) => {
         <input
           type="number"
           className="form-control"
-          min={0}
-          id={name}
           name={name}
-          value={value}
+          id={name}
+          min={minValue}
           onChange={onChange}
         />
       </div>
