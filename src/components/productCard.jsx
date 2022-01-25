@@ -33,7 +33,7 @@ const ProductCard = ({ id, name, price, merchantName, photoFileName }) => {
     imageSource = noImage;
   }
 
-  const cardContents = [
+  const contents = [
     { key: 1, value: `Ár: ${price}.- Forint` },
     { key: 2, value: `Kereskedő: ${merchantName}` },
   ];
@@ -56,19 +56,18 @@ const ProductCard = ({ id, name, price, merchantName, photoFileName }) => {
         <input
           type="file"
           id="photo-upload"
+          className="form-control-file"
           onChange={handlePhotoUpload}
           style={{
-            fontSize: "100px",
             position: "absolute",
-            left: "0",
-            top: "0",
+            inset: "0",
             opacity: "0",
           }}
         />
       </label>
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
-        {cardContents.map(({ key, value }) => (
+        {contents.map(({ key, value }) => (
           <p className="card-text" key={key}>
             {value}
           </p>
