@@ -2,12 +2,13 @@ name: Check pull request title
 
 on:
   pull_request:
-    branches:
-      - "*"
+    branches: [ master ]
+    types: [ edited, opened, reopened, synchronize, labeled, unlabeled ]
+
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
       - uses: Slashgear/action-check-pr-title@v3.0.0
         with:
-          regexp: "^\\[((WU)-[0-9]|No Ticket)\\] - .*$"
+          regexp: "^\\[((WA)-[0-9]|No Ticket)\\] - .*$"
