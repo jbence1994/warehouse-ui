@@ -1,6 +1,5 @@
 # warehouse-ui
 
-
 Netsurf Távközlési Szolgáltató Kft. stock management application's ui.
 
 ## Set up project locally
