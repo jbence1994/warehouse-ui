@@ -13,8 +13,6 @@ import Home from "./pages/home";
 import APPLICATION_NAME from "./config/application-name";
 import pages from "./config/app-skeleton";
 
-import "./App.css";
-
 const App = () => {
   const {
     HOME_PAGE,
