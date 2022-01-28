@@ -11,7 +11,7 @@ import NotFound from "./pages/notFound";
 import Home from "./pages/home";
 
 import APPLICATION_NAME from "./config/application-name";
-import pages from "./config/app-skeleton";
+import pages from "./config/app.skeleton";
 
 import "./App.css";
 
