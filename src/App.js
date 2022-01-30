@@ -10,8 +10,7 @@ import Error from "./pages/error";
 import NotFound from "./pages/notFound";
 import Home from "./pages/home";
 
-import APPLICATION_NAME from "./config/app.name";
-import pages from "./config/app.skeleton";
+import pages, { APPLICATION_NAME } from "./config/app.skeleton";
 
 import "./App.css";
 
