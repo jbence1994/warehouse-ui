@@ -1,3 +1,1 @@
-const APPLICATION_NAME = "Warehouse";
-
-export default APPLICATION_NAME;
+export default "Warehouse";
