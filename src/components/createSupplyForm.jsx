@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from "react";
 
 import Counter from "./common/counter";
-import TextInputDisabled from "./common/textInputDisabled";
 import Submit from "./common/submit";
 
 import { createSupply } from "../services/supplyService";
@@ -41,9 +40,7 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
           <article className="col-6">
             <Counter name={name} minValue={1} onChange={handleNumberChange} />
           </article>
-          <article className="col-6">
-            <TextInputDisabled content={unit} />
-          </article>
+          <article className="col-6"></article>
           <article className="col-12">
             <Submit text="Raktárkészlet növelése" />
           </article>
