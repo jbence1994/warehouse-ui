@@ -42,6 +42,8 @@ const Orders = () => {
     setOrderDetail(updatedOrderDetail);
   };
 
+  // TODO: extract properties from state object.
+
   return (
     <Fragment>
       <section className="row">
