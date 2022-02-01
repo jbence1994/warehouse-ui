@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 
 import TextInput from "./common/textInput";
 import NumberInput from "./common/numberInput";
@@ -36,7 +36,7 @@ const CreateProductForm = () => {
   const { name, unit, price } = product;
 
   return (
-    <React.Fragment>
+    <Fragment>
       <form onSubmit={handleSubmit} noValidate>
         <TextInput
           labelText="Termék neve"
@@ -62,7 +62,7 @@ const CreateProductForm = () => {
         <MerchantsDropdown onChange={handleNumberChange} />
         <Submit text="Mentés" />
       </form>
-    </React.Fragment>
+    </Fragment>
   );
 };
 
