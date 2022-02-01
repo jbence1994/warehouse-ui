@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-const Dropdown = ({ labelText, name, errorMessage, data, onChange }) => {
+const Dropdown = ({ labelText, name, value, data, errorMessage, onChange }) => {
   return (
     <Fragment>
       <div className="form-group">
@@ -9,6 +9,7 @@ const Dropdown = ({ labelText, name, errorMessage, data, onChange }) => {
           className="form-control"
           id={name}
           name={name}
+          value={value}
           onChange={onChange}
         >
           <option value={0}>{""}</option>
