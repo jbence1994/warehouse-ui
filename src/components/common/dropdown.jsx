@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 const Dropdown = ({ labelText, name, errorMessage, data, onChange }) => {
   return (
-    <React.Fragment>
+    <Fragment>
       <div className="form-group">
         <label>{labelText}</label>
         <select
@@ -20,7 +20,7 @@ const Dropdown = ({ labelText, name, errorMessage, data, onChange }) => {
         </select>
       </div>
       {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
-    </React.Fragment>
+    </Fragment>
   );
 };
 

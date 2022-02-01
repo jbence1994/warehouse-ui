@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 const NumberInput = ({ name, labelText, minValue, onChange, errorMessage }) => {
   return (
-    <React.Fragment>
+    <Fragment>
       <div className="form-group">
         <label htmlFor={name}>{labelText}</label>
         <input
@@ -15,7 +15,7 @@ const NumberInput = ({ name, labelText, minValue, onChange, errorMessage }) => {
         />
       </div>
       {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
-    </React.Fragment>
+    </Fragment>
   );
 };
 
