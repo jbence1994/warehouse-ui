@@ -1,5 +1,7 @@
 import React from "react";
 
+import FileInput from "./fileInput";
+
 const Card = ({ title, imageSource, imageAlt, contents, onChange }) => {
   return (
     <div className="card mt-3 mb-3">
@@ -16,16 +18,10 @@ const Card = ({ title, imageSource, imageAlt, contents, onChange }) => {
           }}
           alt={imageAlt}
         />
-        <input
-          type="file"
+        <FileInput
           id="photo-upload"
-          className="form-control-file"
+          disabled={!imageSource.includes("no-image")}
           onChange={onChange}
-          style={{
-            position: "absolute",
-            inset: "0",
-            opacity: "0",
-          }}
         />
       </label>
       <div className="card-body">
