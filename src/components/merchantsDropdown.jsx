@@ -4,7 +4,7 @@ import Dropdown from "../components/common/dropdown";
 
 import { getMerchantKeyValuePairs } from "../services/merchantService";
 
-const MerchantsDropdown = ({ onChange }) => {
+const MerchantsDropdown = ({ value, onChange }) => {
   const [merchantKeyValuePairs, setMerchantKeyValuePairs] = useState([]);
 
   useEffect(() => {
@@ -24,8 +24,9 @@ const MerchantsDropdown = ({ onChange }) => {
     <Dropdown
       labelText="Kereskedő"
       name="merchantId"
-      errorMessage="A kereskedő megadása kötelező."
+      value={value}
       data={merchantKeyValuePairs}
+      errorMessage="A kereskedő megadása kötelező."
       onChange={onChange}
     />
   );

@@ -33,7 +33,7 @@ const CreateProductForm = () => {
     setProduct(updatedProduct);
   };
 
-  const { name, unit, price } = product;
+  const { name, unit, price, merchantId } = product;
 
   return (
     <Fragment>
@@ -59,7 +59,7 @@ const CreateProductForm = () => {
           errorMessage="Az ár megadása kötelező."
           onChange={handleNumberChange}
         />
-        <MerchantsDropdown onChange={handleNumberChange} />
+        <MerchantsDropdown value={merchantId} onChange={handleNumberChange} />
         <Submit text="Mentés" />
       </form>
     </Fragment>
