@@ -42,7 +42,8 @@ const Orders = () => {
     setOrderDetail(updatedOrderDetail);
   };
 
-  // TODO: extract properties from state object.
+  const { technicianId, orderDetails } = order;
+  const { productId } = orderDetail;
 
   return (
     <Fragment>
@@ -50,11 +51,11 @@ const Orders = () => {
         <article className="col-sm-12 col-md-12 col-lg-6">
           <form onSubmit={handleOrderDetailAdd} noValidate>
             <TechniciansDropdown
-              value={order.technicianId}
+              value={technicianId}
               onChange={handleOrderRelatedNumberChange}
             />
             <ProductsDropdown
-              value={orderDetail.productId}
+              value={productId}
               onChange={handleOrderDetailRelatedNumberChange}
             />
             <NumberInput
@@ -68,7 +69,7 @@ const Orders = () => {
           </form>
         </article>
         <article className="col-sm-12 col-md-12 col-lg-6">
-          <OrderDetailsListGroup collection={order.orderDetails} />
+          <OrderDetailsListGroup collection={orderDetails} />
           <form onSubmit={handleSubmit} noValidate>
             <Submit text="Vásárlás rögzítése" />
           </form>
