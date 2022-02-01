@@ -4,7 +4,7 @@ import Dropdown from "../components/common/dropdown";
 
 import { getProductKeyValuePairs } from "../services/productService";
 
-const ProductsDropdown = ({ onChange }) => {
+const ProductsDropdown = ({ value, onChange }) => {
   const [productKeyValuePairs, setProductKeyValuePairs] = useState([]);
 
   useEffect(() => {
@@ -20,8 +20,9 @@ const ProductsDropdown = ({ onChange }) => {
     <Dropdown
       labelText="Termék"
       name="productId"
-      errorMessage="A termék megadása kötelező."
+      value={value}
       data={productKeyValuePairs}
+      errorMessage="A termék megadása kötelező."
       onChange={onChange}
     />
   );

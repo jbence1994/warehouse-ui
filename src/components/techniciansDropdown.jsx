@@ -4,7 +4,7 @@ import Dropdown from "../components/common/dropdown";
 
 import { getTechnicianKeyValuePairs } from "../services/techniciansService";
 
-const TechniciansDropdown = ({ onChange }) => {
+const TechniciansDropdown = ({ value, onChange }) => {
   const [technicianKeyValuePairs, setTechnicianKeyValuePairs] = useState([]);
 
   useEffect(() => {
@@ -20,8 +20,9 @@ const TechniciansDropdown = ({ onChange }) => {
     <Dropdown
       labelText="Technikus"
       name="technicianId"
-      errorMessage="A technikus megadása kötelező."
+      value={value}
       data={technicianKeyValuePairs}
+      errorMessage="A technikus megadása kötelező."
       onChange={onChange}
     />
   );

@@ -49,8 +49,14 @@ const Orders = () => {
       <section className="row">
         <article className="col-sm-12 col-md-12 col-lg-6">
           <form onSubmit={handleOrderDetailAdd} noValidate>
-            <TechniciansDropdown onChange={handleOrderRelatedNumberChange} />
-            <ProductsDropdown onChange={handleOrderDetailRelatedNumberChange} />
+            <TechniciansDropdown
+              value={order.technicianId}
+              onChange={handleOrderRelatedNumberChange}
+            />
+            <ProductsDropdown
+              value={orderDetail.productId}
+              onChange={handleOrderDetailRelatedNumberChange}
+            />
             <NumberInput
               name="quantity"
               labelText="Mennyiség"
