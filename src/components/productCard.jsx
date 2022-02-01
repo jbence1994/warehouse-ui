@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import Card from "./common/card";
+
 import { uploadPhoto } from "../services/productPhotoService";
 
 import endpoints from "../config/api.endpoints";
@@ -39,41 +41,13 @@ const ProductCard = ({ id, name, price, merchantName, photoFileName }) => {
   ];
 
   return (
-    <div className="card mt-3 mb-3">
-      <label htmlFor="photo-upload">
-        <img
-          src={imageSource}
-          className="card-img-top"
-          style={{
-            width: "250px",
-            height: "250px",
-            display: "block",
-            margin: "0 auto",
-            objectFit: "fill",
-          }}
-          alt={name}
-        />
-        <input
-          type="file"
-          id="photo-upload"
-          className="form-control-file"
-          onChange={handlePhotoUpload}
-          style={{
-            position: "absolute",
-            inset: "0",
-            opacity: "0",
-          }}
-        />
-      </label>
-      <div className="card-body">
-        <h5 className="card-title">{name}</h5>
-        {contents.map(({ key, value }) => (
-          <p className="card-text" key={key}>
-            {value}
-          </p>
-        ))}
-      </div>
-    </div>
+    <Card
+      title={name}
+      imageSource={imageSource}
+      imageAlt={name}
+      contents={contents}
+      onChange={handlePhotoUpload}
+    />
   );
 };
 
