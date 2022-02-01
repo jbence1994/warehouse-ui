@@ -1,3 +1,5 @@
+export const APPLICATION_NAME = "Warehouse";
+
 const pages = {
   HOME_PAGE: {
     name: "Főoldal",

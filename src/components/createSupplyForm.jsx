@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 
 import Counter from "./common/counter";
 import TextInputDisabled from "./common/textInputDisabled";
@@ -32,7 +32,7 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <h6 className="mb-4">
         Jelenleg raktáron: {productAvailableQuantity} {unit}
       </h6>
@@ -49,7 +49,7 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
           </article>
         </section>
       </form>
-    </React.Fragment>
+    </Fragment>
   );
 };
 
