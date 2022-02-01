@@ -37,10 +37,14 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
       </h6>
       <form onSubmit={handleSubmit} noValidate>
         <section className="row">
-          <article className="col-6">
-            <Counter name={name} minValue={1} onChange={handleNumberChange} />
+          <article className="col-12">
+            <Counter
+              name={name}
+              minValue={1}
+              addOnText={unit}
+              onChange={handleNumberChange}
+            />
           </article>
-          <article className="col-6"></article>
           <article className="col-12">
             <Submit text="Raktárkészlet növelése" />
           </article>
