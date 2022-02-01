@@ -1,6 +1,6 @@
 import React from "react";
 
-const FileInput = ({ name, isDisabled, onChange }) => {
+const FileInput = ({ name, disabled, onChange }) => {
   return (
     <input
       type="file"
@@ -13,7 +13,7 @@ const FileInput = ({ name, isDisabled, onChange }) => {
         inset: "0",
         opacity: "0",
       }}
-      disabled={isDisabled}
+      disabled={disabled}
     />
   );
 };
