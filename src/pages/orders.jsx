@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 
 import TechniciansDropdown from "../components/techniciansDropdown";
 import ProductsDropdown from "../components/productsDropdown";
@@ -43,7 +43,7 @@ const Orders = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <section className="row">
         <article className="col-sm-12 col-md-12 col-lg-6">
           <form onSubmit={handleOrderDetailAdd} noValidate>
@@ -72,7 +72,7 @@ const Orders = () => {
       <h5>
         <code>OrderDetail: {JSON.stringify(orderDetail)}</code>
       </h5>
-    </React.Fragment>
+    </Fragment>
   );
 };
 
