@@ -1,8 +1,6 @@
 import React, { Fragment } from "react";
 
 const NumberAddOnInput = ({
-  type,
-  placeholder = "",
   name,
   value,
   minValue = 1,
@@ -14,8 +12,7 @@ const NumberAddOnInput = ({
     <Fragment>
       <div className="input-group mb-3">
         <input
-          type={type}
-          placeholder={placeholder}
+          type="number"
           name={name}
           value={value}
           min={minValue}

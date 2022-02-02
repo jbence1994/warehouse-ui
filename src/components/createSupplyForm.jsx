@@ -45,7 +45,6 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
         <section className="row">
           <article className="col-12">
             <NumberAddOnInput
-              type="number"
               name={name}
               value={quantity}
               addOnText={unit}
