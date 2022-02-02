@@ -30,6 +30,9 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
     setSupply(updatedSupply);
   };
 
+  // TODO: check what the root cause of the error (negative number / zero / empty)
+  const errorMessage = true ? "A mennyiség megadása kötelező." : "N/A";
+
   return (
     <Fragment>
       <h6 className="mb-4">
@@ -42,6 +45,7 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
               name={name}
               minValue={1}
               addOnText={unit}
+              errorMessage={errorMessage}
               onChange={handleNumberChange}
             />
           </article>
