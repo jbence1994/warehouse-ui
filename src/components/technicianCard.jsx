@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Card from "./common/card";
 
-// TODO: import { uploadPhoto } from "../services/technicianPhotoService";
+import { uploadPhoto } from "../services/technicianPhotoService";
 
 import endpoints from "../config/api.endpoints";
 
@@ -12,9 +12,15 @@ const TechnicianCard = ({ technician }) => {
   const [uploadedPhotoFileName, setUploadedPhotoFileName] = useState("");
 
   const handlePhotoUpload = async (e) => {
-    console.log(`Sending technician #${id} photo to server.`);
+    const photo = [...e.target.files][0];
 
-    setUploadedPhotoFileName("");
+    const formData = new FormData();
+    formData.append("photoToUpload", photo);
+
+    const { data } = await uploadPhoto(id, formData);
+    const { fileName } = data;
+
+    setUploadedPhotoFileName(fileName);
   };
 
   const { id, name, email, phone, balance, photoFileName } = technician;
