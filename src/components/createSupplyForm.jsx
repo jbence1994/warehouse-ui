@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from "react";
 
-import Counter from "./common/counter";
-import TextInputDisabled from "./common/textInputDisabled";
+import AddOnInput from "./common/addOnInput";
 import Submit from "./common/submit";
 
 import { createSupply } from "../services/supplyService";
@@ -23,6 +22,7 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
     const { availableQuantity } = product;
 
     setProductAvailableQuantity(availableQuantity);
+    setSupply({ quantity: 0 });
   };
 
   const handleNumberChange = ({ currentTarget: input }) => {
@@ -31,6 +31,11 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
     setSupply(updatedSupply);
   };
 
+  // TODO: check what the root cause of the error (negative number / zero / empty)
+  const errorMessage = true ? "A mennyiség megadása kötelező." : "N/A";
+
+  const { quantity } = supply;
+
   return (
     <Fragment>
       <h6 className="mb-4">
@@ -38,11 +43,15 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
       </h6>
       <form onSubmit={handleSubmit} noValidate>
         <section className="row">
-          <article className="col-6">
-            <Counter name={name} minValue={1} onChange={handleNumberChange} />
-          </article>
-          <article className="col-6">
-            <TextInputDisabled content={unit} />
+          <article className="col-12">
+            <AddOnInput
+              type="number"
+              name={name}
+              value={quantity}
+              addOnText={unit}
+              errorMessage={errorMessage}
+              onChange={handleNumberChange}
+            />
           </article>
           <article className="col-12">
             <Submit text="Raktárkészlet növelése" />
