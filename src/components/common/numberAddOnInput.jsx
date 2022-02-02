@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-const AddOnInput = ({
+const NumberAddOnInput = ({
   type,
   placeholder = "",
   name,
@@ -29,4 +29,4 @@ const AddOnInput = ({
   );
 };
 
-export default AddOnInput;
+export default NumberAddOnInput;
