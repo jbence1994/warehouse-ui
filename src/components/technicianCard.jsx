@@ -17,15 +17,14 @@ const TechnicianCard = ({ technician }) => {
     setUploadedPhotoFileName("");
   };
 
-  const { id, name, email, phone, balance, photo } = technician;
-  const { fileName } = photo;
+  const { id, name, email, phone, balance, photoFileName } = technician;
 
   const { API_ROOT, TECHNICIAN_PHOTOS } = endpoints;
 
   let imageSource;
 
-  if (fileName) {
-    imageSource = `${API_ROOT}${TECHNICIAN_PHOTOS}/${fileName}`;
+  if (photoFileName) {
+    imageSource = `${API_ROOT}${TECHNICIAN_PHOTOS}/${photoFileName}`;
   } else if (uploadedPhotoFileName) {
     imageSource = `${API_ROOT}${TECHNICIAN_PHOTOS}/${uploadedPhotoFileName}`;
   } else {
