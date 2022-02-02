@@ -4,6 +4,7 @@ const AddOnInput = ({
   type,
   placeholder = "",
   name,
+  value,
   minValue = 1,
   addOnText,
   errorMessage,
@@ -16,6 +17,7 @@ const AddOnInput = ({
           type={type}
           placeholder={placeholder}
           name={name}
+          value={value}
           min={minValue}
           className="form-control"
           onChange={onChange}

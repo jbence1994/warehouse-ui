@@ -22,6 +22,7 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
     const { availableQuantity } = product;
 
     setProductAvailableQuantity(availableQuantity);
+    setSupply({ quantity: 0 });
   };
 
   const handleNumberChange = ({ currentTarget: input }) => {
@@ -32,6 +33,8 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
 
   // TODO: check what the root cause of the error (negative number / zero / empty)
   const errorMessage = true ? "A mennyiség megadása kötelező." : "N/A";
+
+  const { quantity } = supply;
 
   return (
     <Fragment>
@@ -44,6 +47,7 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
             <AddOnInput
               type="number"
               name={name}
+              value={quantity}
               addOnText={unit}
               errorMessage={errorMessage}
               onChange={handleNumberChange}
