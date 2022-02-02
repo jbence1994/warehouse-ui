@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 
-import Counter from "./common/counter";
+import AddOnInput from "./common/addOnInput";
 import Submit from "./common/submit";
 
 import { createSupply } from "../services/supplyService";
@@ -41,7 +41,8 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
       <form onSubmit={handleSubmit} noValidate>
         <section className="row">
           <article className="col-12">
-            <Counter
+            <AddOnInput
+              type="number"
               name={name}
               minValue={1}
               addOnText={unit}
