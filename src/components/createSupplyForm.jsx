@@ -22,7 +22,7 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
     const { availableQuantity } = product;
 
     setProductAvailableQuantity(availableQuantity);
-    setSupply({ quantity: 0 });
+    setSupply({ ...supply, quantity: 0 });
   };
 
   const handleNumberChange = ({ currentTarget: input }) => {
