@@ -5,6 +5,7 @@ const endpoints = {
   PRODUCT_PHOTOS: "products/photos",
   PRODUCTS: "products",
   SUPPLIES: "supplies",
+  TECHNICIAN_PHOTOS: "technicians/photos",
   TECHNICIANS: "technicians",
   TECHNICIAN_BALANCES: "balances",
   TECHNICIAN_ORDERS: "orders",

@@ -16,7 +16,7 @@ const TechnicianProfile = () => {
     email: "",
     phone: "",
     balance: 0,
-    photoFileName: "",
+    photo: { fileName: "" },
   });
 
   useEffect(() => {

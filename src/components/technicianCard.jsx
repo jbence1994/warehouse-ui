@@ -2,7 +2,9 @@ import React, { useState } from "react";
 
 import Card from "./common/card";
 
-// TODO: import endpoints from "../config/api.endpoints";
+// TODO: import { uploadPhoto } from "../services/technicianPhotoService";
+
+import endpoints from "../config/api.endpoints";
 
 import noImage from "../images/no-image.png";
 
@@ -17,16 +19,17 @@ const TechnicianCard = ({ technician }) => {
     setUploadedPhotoFileName("");
   };
 
-  const { id, name, email, phone, balance, photoFileName } = technician;
+  const { id, name, email, phone, balance, photo } = technician;
+  const { fileName } = photo;
 
-  // TODO: const { API_ROOT } = endpoints;
+  const { API_ROOT, TECHNICIAN_PHOTOS } = endpoints;
 
   let imageSource;
 
-  if (photoFileName) {
-    // TODO: imageSource = `${API_ROOT}${TECHNICIAN_PHOTOS}/${photoFileName}`;
+  if (fileName) {
+    imageSource = `${API_ROOT}${TECHNICIAN_PHOTOS}/${fileName}`;
   } else if (uploadedPhotoFileName) {
-    // TODO: imageSource = `${API_ROOT}${TECHNICIAN_PHOTOS}/${uploadedPhotoFileName}`;
+    imageSource = `${API_ROOT}${TECHNICIAN_PHOTOS}/${uploadedPhotoFileName}`;
   } else {
     imageSource = noImage;
   }
