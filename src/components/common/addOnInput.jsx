@@ -4,7 +4,7 @@ const AddOnInput = ({
   type,
   placeholder = "",
   name,
-  minValue,
+  minValue = 1,
   addOnText,
   errorMessage,
   onChange,
