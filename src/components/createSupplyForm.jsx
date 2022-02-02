@@ -28,7 +28,7 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
   const handleNumberChange = ({ currentTarget: input }) => {
     const updatedSupply = { ...supply };
     updatedSupply[input.name] = parseInt(input.value);
-    setSupply(updatedSupply);
+    setSupply({ ...supply, quantity: 0 });
   };
 
   // TODO: check what the root cause of the error (negative number / zero / empty)
