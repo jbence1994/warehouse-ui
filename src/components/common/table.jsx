@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import TableHeader from "./tableHeader";
 import TableBody from "./tableBody";
 
-const Table = ({ caption, collection, columns }) => {
+const Table = ({ caption, columns, collection }) => {
   return (
     <Fragment>
       <h5>{caption}</h5>
