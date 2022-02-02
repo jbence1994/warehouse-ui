@@ -1,20 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import TechnicianCard from "../components/technicianCard";
 import TechnicianOrdersTable from "../components/technicianOrdersTable";
 import TechnicianBalancesTable from "../components/technicianBalancesTable";
 
 import { getTechnician } from "../services/technicianService";
 
 const TechnicianProfile = () => {
-  const { id } = useParams();
+  const { id: idRouteParameter } = useParams();
 
-  const [technician, setTechnician] = useState({});
+  const [technician, setTechnician] = useState({
+    id: idRouteParameter,
+    name: "",
+    email: "",
+    phone: "",
+    balance: 0,
+    photoFileName: "",
+  });
 
   useEffect(() => {
     const populateTechnician = async () => {
       try {
-        const { data } = await getTechnician(id);
+        const { data } = await getTechnician(idRouteParameter);
         setTechnician(data);
       } catch (e) {
         window.location.href = "/error";
@@ -22,21 +30,20 @@ const TechnicianProfile = () => {
     };
 
     populateTechnician();
-  }, [id]);
+  }, [idRouteParameter]);
+
+  const { id } = technician;
 
   return (
     <section className="row">
       <article className="col-sm-12 col-md-12 col-lg-4">
-        <p>Név: {technician.name}</p>
-        <p>E-mail cím: {technician.email}</p>
-        <p>Telefonszám: {technician.phone}</p>
-        <p>Egyenleg: {technician.balance} Forint</p>
+        <TechnicianCard technician={technician} />
       </article>
       <article className="col-sm-12 col-md-12 col-lg-4">
-        <TechnicianOrdersTable technicianId={technician.id} />
+        <TechnicianOrdersTable technicianId={id} />
       </article>
       <article className="col-sm-12 col-md-12 col-lg-4">
-        <TechnicianBalancesTable technicianId={technician.id} />
+        <TechnicianBalancesTable technicianId={id} />
       </article>
     </section>
   );
