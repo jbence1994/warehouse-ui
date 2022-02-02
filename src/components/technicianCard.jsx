@@ -12,8 +12,6 @@ const TechnicianCard = ({ technician }) => {
   const [uploadedPhotoFileName, setUploadedPhotoFileName] = useState("");
 
   const handlePhotoUpload = async (e) => {
-    e.preventDefault();
-
     console.log(`Sending technician #${id} photo to server.`);
 
     setUploadedPhotoFileName("");
