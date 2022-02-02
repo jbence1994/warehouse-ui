@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 
-import AddOnInput from "./common/addOnInput";
+import NumberAddOnInput from "./common/numberAddOnInput";
 import Submit from "./common/submit";
 
 import { createSupply } from "../services/supplyService";
@@ -44,8 +44,7 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
       <form onSubmit={handleSubmit} noValidate>
         <section className="row">
           <article className="col-12">
-            <AddOnInput
-              type="number"
+            <NumberAddOnInput
               name={name}
               value={quantity}
               addOnText={unit}
