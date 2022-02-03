@@ -92,4 +92,4 @@ const CreateProductForm = () => {
 
 export default CreateProductForm;
 
-// TODO: if modal class is applied to Modal component, it's disappering. Fix this to proper behaviour.
+// TODO: if modal class is applied to Modal component, it's disappearing. Fix this to proper behaviour.
