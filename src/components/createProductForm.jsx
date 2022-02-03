@@ -25,10 +25,9 @@ const CreateProductForm = () => {
     try {
       const { data } = await createProduct(product);
       setProduct({ ...data });
-
       setShouldShowModal(true);
     } catch (e) {
-      console.log(e.message);
+      console.log(e.message); // TODO: show error modal
     }
   };
 
