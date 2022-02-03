@@ -18,11 +18,15 @@ const CreateProductForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await createProduct(product);
+    try {
+      const { data } = await createProduct(product);
+      console.log(data);
+      // TODO: show a toast notification / modal window if process was succeed or failed
+    } catch (e) {
+      console.log("Houston, we've got a problem.");
+    }
 
     setProduct({ name: "", unit: "", price: 0, merchantId: 0 });
-
-    // TODO: show a toast notification if process was succeed or failed
   };
 
   const handleTextChange = ({ currentTarget: input }) => {
