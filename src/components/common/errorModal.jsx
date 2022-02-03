@@ -2,15 +2,13 @@ import React from "react";
 
 import ModalHeader from "./modalHeader";
 import ModalBody from "./modalBody";
-import ModalFooter from "./modalFooter";
+import ErrorModalFooter from "./errorModalFooter";
 
-const Modal = ({
+const ErrorModal = ({
   shouldShow,
   headerTitle,
   bodyContent,
-  modalFooterButtonText,
-  modalFooterRoutingButtonText,
-  modalFooterRoutingButtonRoute,
+  buttonText,
   onClick,
 }) => {
   return (
@@ -20,12 +18,7 @@ const Modal = ({
         <div className="modal-content">
           <ModalHeader title={headerTitle} />
           <ModalBody bodyContent={bodyContent} />
-          <ModalFooter
-            buttonText={modalFooterButtonText}
-            routingButtonText={modalFooterRoutingButtonText}
-            routingButtonRoute={modalFooterRoutingButtonRoute}
-            onClick={onClick}
-          />
+          <ErrorModalFooter buttonText={buttonText} onClick={onClick} />
           <code>Should show modal: {JSON.stringify(shouldShow)}</code>
         </div>
       </div>
@@ -33,4 +26,4 @@ const Modal = ({
   );
 };
 
-export default Modal;
+export default ErrorModal;

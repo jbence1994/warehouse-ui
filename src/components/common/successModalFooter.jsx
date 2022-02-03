@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ModalFooter = ({
+const SuccessModalFooter = ({
   buttonText,
   routingButtonText,
   routingButtonRoute,
@@ -23,4 +23,4 @@ const ModalFooter = ({
   );
 };
 
-export default ModalFooter;
+export default SuccessModalFooter;

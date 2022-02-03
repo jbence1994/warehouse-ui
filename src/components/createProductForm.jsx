@@ -4,7 +4,8 @@ import TextInput from "./common/textInput";
 import NumberInput from "./common/numberInput";
 import MerchantsDropdown from "./merchantsDropdown";
 import Submit from "./common/submit";
-import Modal from "./common/modal";
+import SuccessModal from "./common/successModal";
+import ErrorModal from "./common/errorModal";
 
 import { createProduct } from "../services/productService";
 
@@ -52,21 +53,21 @@ const CreateProductForm = () => {
 
   // TODO: set back condition to: shouldShowModal
   const displayModal = true ? (
-    <Modal
+    <SuccessModal
       shouldShow={shouldShowModal}
       headerTitle="Termék hozzáadása sikeres!"
       bodyContent={`A(z) ${product.name} nevű termék sikeresen nyilvántartásba került.`}
-      modalFooterButtonText="Hozzáadás folytatása"
-      modalFooterRoutingButtonText="Vissza a raktárkészlethez"
-      modalFooterRoutingButtonRoute="/raktarkeszlet"
+      footerButtonText="Hozzáadás folytatása"
+      footerRoutingButtonText="Vissza a raktárkészlethez"
+      footerRoutingButtonRoute="/raktarkeszlet"
       onClick={handleModalClosed}
     />
   ) : (
-    <Modal
+    <ErrorModal
       shouldShow={shouldShowModal}
       headerTitle="Termék hozzáadása sikertelen!"
       bodyContent={`A(z) ${product.name} nevű termék nem került nyilvántartásba.`}
-      modalFooterButtonText="Ok"
+      buttonText="OK"
       onClick={handleModalClosed}
     />
   );
