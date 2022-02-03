@@ -34,7 +34,6 @@ const App = () => {
         homeRoute={HOME_PAGE.path}
         routes={[
           { name: SUPPLIES_PAGE.name, path: SUPPLIES_PAGE.path },
-          { name: PRODUCTS_PAGE.name, path: PRODUCTS_PAGE.path },
           { name: TECHNICIANS_PAGE.name, path: TECHNICIANS_PAGE.path },
           { name: ORDERS_PAGE.name, path: ORDERS_PAGE.path },
         ]}
