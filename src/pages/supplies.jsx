@@ -26,7 +26,7 @@ const Supplies = () => {
     <Fragment>
       <section className="row">
         <article className="col-sm-12 col-md-12 col-lg-4">
-          <RoutingButton text="Új termék hozzáadása" url="/termekek" />
+          <RoutingButton text="Új termék hozzáadása" url="/termek/uj" />
         </article>
       </section>
       <section className="row">
