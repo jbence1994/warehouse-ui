@@ -6,6 +6,7 @@ import MerchantsDropdown from "./merchantsDropdown";
 import Submit from "./common/submit";
 
 import { createProduct } from "../services/productService";
+import Modal from "./common/modal";
 
 const CreateProductForm = () => {
   const [product, setProduct] = useState({
@@ -15,17 +16,23 @@ const CreateProductForm = () => {
     merchantId: 0,
   });
 
+  const [shouldShowModal, setShouldShowModal] = useState(true);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const { data } = await createProduct(product);
-      console.log(data);
-      // TODO: show a modal window if process was succeed or failed
+      setProduct({ ...data });
+
+      setShouldShowModal(true);
     } catch (e) {
       console.log("Houston, we have a problem.");
     }
+  };
 
+  const handleModalClosed = () => {
+    setShouldShowModal(false);
     setProduct({ name: "", unit: "", price: 0, merchantId: 0 });
   };
 
@@ -42,6 +49,10 @@ const CreateProductForm = () => {
   };
 
   const { name, unit, price, merchantId } = product;
+
+  const modalTitle = true
+    ? "Termék hozzáadása sikeres!"
+    : "Termék hozzáadása sikertelen!";
 
   return (
     <Fragment>
@@ -70,8 +81,15 @@ const CreateProductForm = () => {
         <MerchantsDropdown value={merchantId} onChange={handleNumberChange} />
         <Submit text="Mentés" />
       </form>
+      <Modal
+        title={modalTitle}
+        shouldShow={shouldShowModal}
+        productName={product.name}
+      />
     </Fragment>
   );
 };
 
 export default CreateProductForm;
+
+// TODO: if modal class is applied to Modal component, it's disappering. Fix this to proper behaviour.

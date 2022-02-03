@@ -1,9 +1,12 @@
 import React from "react";
 
-const ModalBody = () => {
+const ModalBody = ({ productName }) => {
   return (
     <div className="modal-body">
-      <p>Termék hozzáadva a következő adatokkal:</p>
+      <p>
+        A(z) <span style={{ fontWeight: "bold" }}>{productName}</span> nevű
+        terméket sikeresen nyilvántartásba vette.
+      </p>
     </div>
   );
 };
