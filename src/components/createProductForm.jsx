@@ -4,9 +4,9 @@ import TextInput from "./common/textInput";
 import NumberInput from "./common/numberInput";
 import MerchantsDropdown from "./merchantsDropdown";
 import Submit from "./common/submit";
+import Modal from "./common/modal";
 
 import { createProduct } from "../services/productService";
-import Modal from "./common/modal";
 
 const CreateProductForm = () => {
   const [product, setProduct] = useState({
@@ -50,12 +50,32 @@ const CreateProductForm = () => {
 
   const { name, unit, price, merchantId } = product;
 
-  const modalTitle = true
-    ? "Termék hozzáadása sikeres!"
-    : "Termék hozzáadása sikertelen!";
+  // TODO: set back condition to: shouldShowModal
+  const displayModal = true ? (
+    <Modal
+      shouldShow={shouldShowModal}
+      headerTitle="Termék hozzáadása sikeres!"
+      bodyContent={`A(z) ${product.name} nevű termék sikeresen nyilvántartásba került.`}
+      modalFooterButtonText="Hozzáadás folytatása"
+      modalFooterRoutingButtonText="Vissza a raktárkészlethez"
+      modalFooterRoutingButtonRoute="/raktarkeszlet"
+      onClick={handleModalClosed}
+    />
+  ) : (
+    <Modal
+      shouldShow={shouldShowModal}
+      headerTitle="Termék hozzáadása sikertelen!"
+      bodyContent={`A(z) ${product.name} nevű termék nem került nyilvántartásba.`}
+      modalFooterButtonText="Ok"
+      onClick={handleModalClosed}
+    />
+  );
 
   return (
     <Fragment>
+      <h6>
+        <code>{JSON.stringify(product)}</code>
+      </h6>
       <form onSubmit={handleSubmit} noValidate>
         <TextInput
           labelText="Termék neve"
@@ -81,11 +101,7 @@ const CreateProductForm = () => {
         <MerchantsDropdown value={merchantId} onChange={handleNumberChange} />
         <Submit text="Mentés" />
       </form>
-      <Modal
-        title={modalTitle}
-        shouldShow={shouldShowModal}
-        productName={product.name}
-      />
+      {displayModal}
     </Fragment>
   );
 };
