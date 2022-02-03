@@ -21,9 +21,9 @@ const CreateProductForm = () => {
     try {
       const { data } = await createProduct(product);
       console.log(data);
-      // TODO: show a toast notification / modal window if process was succeed or failed
+      // TODO: show a modal window if process was succeed or failed
     } catch (e) {
-      console.log("Houston, we've got a problem.");
+      console.log("Houston, we have a problem.");
     }
 
     setProduct({ name: "", unit: "", price: 0, merchantId: 0 });
