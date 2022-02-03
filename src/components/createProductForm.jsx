@@ -19,6 +19,10 @@ const CreateProductForm = () => {
     e.preventDefault();
 
     await createProduct(product);
+
+    setProduct({ name: "", unit: "", price: 0, merchantId: 0 });
+
+    // TODO: show a toast notification if process was succeed or failed
   };
 
   const handleTextChange = ({ currentTarget: input }) => {
