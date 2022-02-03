@@ -4,7 +4,7 @@ import ModalHeader from "./modalHeader";
 import ModalBody from "./modalBody";
 import ModalFooter from "./modalFooter";
 
-const Modal = ({ title, shouldShow, productName = "Lófasz" }) => {
+const Modal = ({ title, shouldShow, productName }) => {
   return (
     <div className={shouldShow ? "" : "modal"} tabIndex="-1" role="dialog">
       <div className="modal-dialog" role="document">

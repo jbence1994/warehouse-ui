@@ -27,7 +27,7 @@ const CreateProductForm = () => {
 
       setShouldShowModal(true);
     } catch (e) {
-      console.log("Houston, we have a problem.");
+      console.log(e.message);
     }
   };
 
