@@ -13,6 +13,10 @@ const pages = {
     name: "Termékek",
     path: "/termek/uj",
   },
+  MERCHANTS_PAGE: {
+    name: "Kereskedők",
+    path: "/kereskedo/uj",
+  },
   ORDERS_PAGE: {
     name: "Vásárlás",
     path: "/vasarlas",

@@ -24,9 +24,14 @@ const Supplies = () => {
 
   return (
     <Fragment>
-      <section className="row">
+      <section className="row mb-3">
         <article className="col-sm-12 col-md-12 col-lg-4">
           <RoutingButton text="Új termék hozzáadása" url="/termek/uj" />
+        </article>
+      </section>
+      <section className="row mb-3">
+        <article className="col-sm-12 col-md-12 col-lg-4">
+          <RoutingButton text="Új tereskedő hozzáadása" url="/kereskedo/uj" />
         </article>
       </section>
       <section className="row">
