@@ -1,9 +1,13 @@
-const formatCurrency = () => {
-  return null;
+const formatCurrency = (currency) => {
+  const formattedCurrency = { ...currency };
+
+  return formattedCurrency.append(".- Forint");
 };
 
-const formatDate = () => {
-  return null;
+const formatDate = (date) => {
+  const formattedDate = { ...date };
+
+  return formattedDate.toString().replace("T", " ");
 };
 
 export { formatCurrency, formatDate };
