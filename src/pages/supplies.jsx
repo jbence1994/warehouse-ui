@@ -23,25 +23,17 @@ const Supplies = () => {
 
   return (
     <section className="row">
-      {products.map(
-        ({ id, name, price, unit, availableQuantity, merchant, photo }) => (
-          <article key={id} className="col-sm-12 col-md-12 col-lg-4">
-            <ProductCard
-              id={id}
-              name={name}
-              price={price}
-              merchantName={merchant.name}
-              photoFileName={photo ? photo.fileName : ""}
-            />
-            <CreateSupplyForm
-              name="quantity"
-              productId={id}
-              availableQuantity={availableQuantity}
-              unit={unit}
-            />
-          </article>
-        )
-      )}
+      {products.map((product) => (
+        <article key={product.id} className="col-sm-12 col-md-12 col-lg-4">
+          <ProductCard product={product} />
+          <CreateSupplyForm
+            name="quantity"
+            productId={product.id}
+            availableQuantity={product.availableQuantity}
+            unit={product.unit}
+          />
+        </article>
+      ))}
     </section>
   );
 };
