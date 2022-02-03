@@ -8,7 +8,7 @@ import endpoints from "../config/api.endpoints";
 
 import noImage from "../images/no-image.png";
 
-const ProductCard = ({ id, name, price, merchantName, photoFileName }) => {
+const ProductCard = ({ product }) => {
   const [uploadedPhotoFileName, setUploadedPhotoFileName] = useState("");
 
   const handlePhotoUpload = async (e) => {
@@ -22,6 +22,9 @@ const ProductCard = ({ id, name, price, merchantName, photoFileName }) => {
 
     setUploadedPhotoFileName(fileName);
   };
+
+  const { id, name, price, merchant, photoFileName } = product;
+  const { name: merchantName } = merchant;
 
   const { API_ROOT, PRODUCT_PHOTOS } = endpoints;
 
