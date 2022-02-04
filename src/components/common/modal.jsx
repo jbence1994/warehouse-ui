@@ -6,7 +6,7 @@ const Modal = ({
   content,
   buttonText,
   routingButtonText = "",
-  route = "",
+  redirectUrl = "",
   isSuccessModal = true,
   onClick,
 }) => {
@@ -24,7 +24,11 @@ const Modal = ({
             <button type="button" className="btn btn-primary" onClick={onClick}>
               {buttonText}
             </button>
-            <Link className="btn btn-secondary" data-dismiss="modal" to={route}>
+            <Link
+              className="btn btn-secondary"
+              data-dismiss="modal"
+              to={redirectUrl}
+            >
               {routingButtonText}
             </Link>
           </Fragment>

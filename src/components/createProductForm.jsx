@@ -86,7 +86,7 @@ const CreateProductForm = () => {
           content={`A(z) ${product.name} nevű termék sikeresen nyilvántartásba került.`}
           buttonText="Hozzáadás folytatása"
           routingButtonText="Vissza a raktárkészlethez"
-          route="/raktarkeszlet"
+          redirectUrl="/raktarkeszlet"
           onClick={handleModalClosed}
         />
       )}
