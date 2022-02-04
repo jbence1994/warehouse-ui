@@ -6,12 +6,10 @@ import ErrorModalFooter from "./errorModalFooter";
 
 const ErrorModal = ({ headerTitle, bodyContent, buttonText, onClick }) => {
   return (
-    <div className="modal-dialog">
-      <div className="modal-content">
-        <ModalHeader title={headerTitle} />
-        <ModalBody bodyContent={bodyContent} />
-        <ErrorModalFooter buttonText={buttonText} onClick={onClick} />
-      </div>
+    <div className="modal-dialog modal-content">
+      <ModalHeader title={headerTitle} />
+      <ModalBody bodyContent={bodyContent} />
+      <ErrorModalFooter buttonText={buttonText} onClick={onClick} />
     </div>
   );
 };

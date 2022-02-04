@@ -13,17 +13,15 @@ const SuccessModal = ({
   onClick,
 }) => {
   return (
-    <div className="modal-dialog">
-      <div className="modal-content">
-        <ModalHeader title={headerTitle} />
-        <ModalBody bodyContent={bodyContent} />
-        <SuccessModalFooter
-          buttonText={footerButtonText}
-          routingButtonText={footerRoutingButtonText}
-          routingButtonRoute={footerRoutingButtonRoute}
-          onClick={onClick}
-        />
-      </div>
+    <div className="modal-dialog modal-content">
+      <ModalHeader title={headerTitle} />
+      <ModalBody bodyContent={bodyContent} />
+      <SuccessModalFooter
+        buttonText={footerButtonText}
+        routingButtonText={footerRoutingButtonText}
+        routingButtonRoute={footerRoutingButtonRoute}
+        onClick={onClick}
+      />
     </div>
   );
 };
