@@ -55,9 +55,6 @@ const CreateProductForm = () => {
 
   return (
     <Fragment>
-      <h6>
-        <code>{JSON.stringify(product)}</code>
-      </h6>
       <form onSubmit={handleSubmit} noValidate>
         <TextInput
           labelText="Termék neve"
