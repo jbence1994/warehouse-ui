@@ -26,8 +26,9 @@ const CreateProductForm = () => {
     try {
       const { data } = await createProduct(product);
       setProduct({ ...data });
+
       setShouldShowSuccessModal(true);
-    } catch (e) {
+    } catch {
       setShouldErrorShowModal(true);
     }
   };
