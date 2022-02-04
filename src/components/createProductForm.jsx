@@ -4,8 +4,7 @@ import TextInput from "./common/textInput";
 import NumberInput from "./common/numberInput";
 import MerchantsDropdown from "./merchantsDropdown";
 import Submit from "./common/submit";
-import SuccessModal from "./common/successModal";
-import ErrorModal from "./common/errorModal";
+import Modal from "./common/modal";
 
 import { createProduct } from "../services/productService";
 
@@ -82,20 +81,21 @@ const CreateProductForm = () => {
         <Submit text="Mentés" />
       </form>
       {shouldShowSuccessModal && (
-        <SuccessModal
+        <Modal
           title="Termék hozzáadása sikeres!"
           content={`A(z) ${product.name} nevű termék sikeresen nyilvántartásba került.`}
-          footerButtonText="Hozzáadás folytatása"
-          footerRoutingButtonText="Vissza a raktárkészlethez"
-          footerRoutingButtonRoute="/raktarkeszlet"
+          buttonText="Hozzáadás folytatása"
+          routingButtonText="Vissza a raktárkészlethez"
+          route="/raktarkeszlet"
           onClick={handleModalClosed}
         />
       )}
       {shouldShowErrorModal && (
-        <ErrorModal
+        <Modal
           title="Termék hozzáadása sikertelen!"
           content={`A(z) ${product.name} nevű termék nem került nyilvántartásba.`}
           buttonText="OK"
+          isSuccessModal={false}
           onClick={handleModalClosed}
         />
       )}
