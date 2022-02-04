@@ -8,6 +8,8 @@ import Modal from "./common/modal";
 
 import { createProduct } from "../services/productService";
 
+import pages from "../config/app.skeleton";
+
 const CreateProductForm = () => {
   const [product, setProduct] = useState({
     name: "",
@@ -53,6 +55,9 @@ const CreateProductForm = () => {
 
   const { name, unit, price, merchantId } = product;
 
+  const { SUPPLIES_PAGE } = pages;
+  const { path: suppliesPagePath } = SUPPLIES_PAGE;
+
   return (
     <Fragment>
       <form onSubmit={handleSubmit} noValidate>
@@ -86,7 +91,7 @@ const CreateProductForm = () => {
           content={`A(z) ${product.name} nevű termék sikeresen nyilvántartásba került.`}
           buttonText="Hozzáadás folytatása"
           routingButtonText="Vissza a raktárkészlethez"
-          redirectUrl="/raktarkeszlet"
+          redirectUrl={suppliesPagePath}
           onClick={handleModalClosed}
         />
       )}
