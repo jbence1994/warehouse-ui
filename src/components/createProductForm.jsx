@@ -71,7 +71,7 @@ const CreateProductForm = () => {
           onChange={handleTextChange}
         />
         <NumberInput
-          labelText="Termék ára"
+          labelText="Ár"
           name="price"
           value={price}
           errorMessage="Az ár megadása kötelező."
