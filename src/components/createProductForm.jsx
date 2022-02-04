@@ -17,7 +17,8 @@ const CreateProductForm = () => {
     merchantId: 0,
   });
 
-  const [shouldShowModal, setShouldShowModal] = useState(true);
+  const [shouldShowSuccessModal, setShouldShowSuccessModal] = useState(false);
+  const [shouldShowErrorModal, setShouldErrorShowModal] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,14 +26,16 @@ const CreateProductForm = () => {
     try {
       const { data } = await createProduct(product);
       setProduct({ ...data });
-      setShouldShowModal(true);
+      setShouldShowSuccessModal(true);
     } catch (e) {
-      console.log(e.message); // TODO: show error modal
+      setShouldErrorShowModal(true);
     }
   };
 
   const handleModalClosed = () => {
-    setShouldShowModal(false);
+    setShouldShowSuccessModal(false);
+    setShouldErrorShowModal(false);
+
     setProduct({ name: "", unit: "", price: 0, merchantId: 0 });
   };
 
@@ -49,27 +52,6 @@ const CreateProductForm = () => {
   };
 
   const { name, unit, price, merchantId } = product;
-
-  // TODO: set back condition to: shouldShowModal
-  const displayModal = true ? (
-    <SuccessModal
-      shouldShow={shouldShowModal}
-      headerTitle="Termék hozzáadása sikeres!"
-      bodyContent={`A(z) ${product.name} nevű termék sikeresen nyilvántartásba került.`}
-      footerButtonText="Hozzáadás folytatása"
-      footerRoutingButtonText="Vissza a raktárkészlethez"
-      footerRoutingButtonRoute="/raktarkeszlet"
-      onClick={handleModalClosed}
-    />
-  ) : (
-    <ErrorModal
-      shouldShow={shouldShowModal}
-      headerTitle="Termék hozzáadása sikertelen!"
-      bodyContent={`A(z) ${product.name} nevű termék nem került nyilvántartásba.`}
-      buttonText="OK"
-      onClick={handleModalClosed}
-    />
-  );
 
   return (
     <Fragment>
@@ -101,11 +83,26 @@ const CreateProductForm = () => {
         <MerchantsDropdown value={merchantId} onChange={handleNumberChange} />
         <Submit text="Mentés" />
       </form>
-      {displayModal}
+      {shouldShowSuccessModal && (
+        <SuccessModal
+          headerTitle="Termék hozzáadása sikeres!"
+          bodyContent={`A(z) ${product.name} nevű termék sikeresen nyilvántartásba került.`}
+          footerButtonText="Hozzáadás folytatása"
+          footerRoutingButtonText="Vissza a raktárkészlethez"
+          footerRoutingButtonRoute="/raktarkeszlet"
+          onClick={handleModalClosed}
+        />
+      )}
+      {shouldShowErrorModal && (
+        <ErrorModal
+          headerTitle="Termék hozzáadása sikertelen!"
+          bodyContent={`A(z) ${product.name} nevű termék nem került nyilvántartásba.`}
+          buttonText="OK"
+          onClick={handleModalClosed}
+        />
+      )}
     </Fragment>
   );
 };
 
 export default CreateProductForm;
-
-// TODO: if modal class is applied to Modal component, it's disappearing. Fix this to proper behaviour.
