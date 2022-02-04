@@ -85,8 +85,8 @@ const CreateProductForm = () => {
       </form>
       {shouldShowSuccessModal && (
         <SuccessModal
-          headerTitle="Termék hozzáadása sikeres!"
-          bodyContent={`A(z) ${product.name} nevű termék sikeresen nyilvántartásba került.`}
+          title="Termék hozzáadása sikeres!"
+          content={`A(z) ${product.name} nevű termék sikeresen nyilvántartásba került.`}
           footerButtonText="Hozzáadás folytatása"
           footerRoutingButtonText="Vissza a raktárkészlethez"
           footerRoutingButtonRoute="/raktarkeszlet"
@@ -95,8 +95,8 @@ const CreateProductForm = () => {
       )}
       {shouldShowErrorModal && (
         <ErrorModal
-          headerTitle="Termék hozzáadása sikertelen!"
-          bodyContent={`A(z) ${product.name} nevű termék nem került nyilvántartásba.`}
+          title="Termék hozzáadása sikertelen!"
+          content={`A(z) ${product.name} nevű termék nem került nyilvántartásba.`}
           buttonText="OK"
           onClick={handleModalClosed}
         />
