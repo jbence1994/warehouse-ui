@@ -34,11 +34,14 @@ const CreateProductForm = () => {
     }
   };
 
-  const handleModalClosed = () => {
+  const handleSuccessModalClosed = () => {
     setShouldShowSuccessModal(false);
-    setShouldErrorShowModal(false);
 
     setProduct({ name: "", unit: "", price: 0, merchantId: 0 });
+  };
+
+  const handleErrorModalClosed = () => {
+    setShouldErrorShowModal(false);
   };
 
   const handleTextChange = ({ currentTarget: input }) => {
@@ -92,7 +95,7 @@ const CreateProductForm = () => {
           buttonText="Hozzáadás folytatása"
           routingButtonText="Vissza a raktárkészlethez"
           redirectUrl={suppliesPagePath}
-          onClick={handleModalClosed}
+          onClick={handleSuccessModalClosed}
         />
       )}
       {shouldShowErrorModal && (
@@ -101,7 +104,7 @@ const CreateProductForm = () => {
           content={`A(z) ${product.name} nevű termék nem került nyilvántartásba.`}
           buttonText="OK"
           isSuccessModal={false}
-          onClick={handleModalClosed}
+          onClick={handleErrorModalClosed}
         />
       )}
     </Fragment>
