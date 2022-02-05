@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-const TextInput = ({ labelText, name, value, errorMessage, onChange }) => {
+const TextInput = ({ labelText, name, value, errorMessage = "", onChange }) => {
   return (
     <Fragment>
       <div className="form-group">
