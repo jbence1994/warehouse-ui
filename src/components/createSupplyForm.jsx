@@ -47,6 +47,7 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
             <NumberAddOnInput
               name={name}
               value={quantity}
+              minValue={1}
               addOnText={unit}
               errorMessage={errorMessage}
               onChange={handleNumberChange}
