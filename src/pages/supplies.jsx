@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
+import RoutingButton from "../components/common/routingButton";
 import ProductCard from "../components/productCard";
 import CreateSupplyForm from "../components/createSupplyForm";
 
@@ -22,19 +23,31 @@ const Supplies = () => {
   }, []);
 
   return (
-    <section className="row">
-      {products.map((product) => (
-        <article key={product.id} className="col-sm-12 col-md-12 col-lg-4">
-          <ProductCard product={product} />
-          <CreateSupplyForm
-            name="quantity"
-            productId={product.id}
-            availableQuantity={product.availableQuantity}
-            unit={product.unit}
-          />
+    <Fragment>
+      <section className="row mb-3">
+        <article className="col-sm-12 col-md-12 col-lg-4">
+          <RoutingButton text="Új termék hozzáadása" url="/termek/uj" />
         </article>
-      ))}
-    </section>
+      </section>
+      <section className="row mb-3">
+        <article className="col-sm-12 col-md-12 col-lg-4">
+          <RoutingButton text="Új kereskedő hozzáadása" url="/kereskedo/uj" />
+        </article>
+      </section>
+      <section className="row">
+        {products.map((product) => (
+          <article key={product.id} className="col-sm-12 col-md-12 col-lg-4">
+            <ProductCard product={product} />
+            <CreateSupplyForm
+              name="quantity"
+              productId={product.id}
+              availableQuantity={product.availableQuantity}
+              unit={product.unit}
+            />
+          </article>
+        ))}
+      </section>
+    </Fragment>
   );
 };
 

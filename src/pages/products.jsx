@@ -1,7 +1,15 @@
 import React from "react";
 
+import CreateProductForm from "../components/createProductForm";
+
 const Products = () => {
-  return <h1>Product page</h1>;
+  return (
+    <section className="row">
+      <article className="col-12">
+        <CreateProductForm />
+      </article>
+    </section>
+  );
 };
 
 export default Products;
