@@ -65,6 +65,7 @@ const CreateProductForm = () => {
     <Fragment>
       <form onSubmit={handleSubmit} noValidate>
         <TextInput
+          type="text"
           name="name"
           value={name}
           maxLength={255}
@@ -73,6 +74,7 @@ const CreateProductForm = () => {
           onChange={handleTextChange}
         />
         <TextInput
+          type="text"
           name="unit"
           value={unit}
           maxLength={255}

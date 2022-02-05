@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 
 const TextInput = ({
+  type,
   name,
   value,
   maxLength,
@@ -13,7 +14,7 @@ const TextInput = ({
       <div className="form-group">
         <label htmlFor={name}>{labelText}</label>
         <input
-          type="text"
+          type={type}
           className="form-control"
           id={name}
           name={name}

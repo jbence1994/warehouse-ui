@@ -57,6 +57,7 @@ const CreateMerchantForm = () => {
     <Fragment>
       <form onSubmit={handleSubmit} noValidate>
         <TextInput
+          type="text"
           name="name"
           value={name}
           maxLength={255}
@@ -65,6 +66,7 @@ const CreateMerchantForm = () => {
           onChange={handleTextChange}
         />
         <TextInput
+          type="text"
           name="city"
           value={city}
           maxLength={255}
@@ -73,6 +75,7 @@ const CreateMerchantForm = () => {
           onChange={handleTextChange}
         />
         <TextInput
+          type="email"
           name="email"
           value={email}
           maxLength={255}
@@ -80,6 +83,7 @@ const CreateMerchantForm = () => {
           onChange={handleTextChange}
         />
         <TextInput
+          type="tel"
           name="phone"
           value={phone}
           maxLength={25}
