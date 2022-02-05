@@ -43,7 +43,7 @@ const Orders = () => {
   };
 
   const { technicianId, orderDetails } = order;
-  const { productId } = orderDetail;
+  const { productId, quantity } = orderDetail;
 
   return (
     <Fragment>
@@ -60,10 +60,11 @@ const Orders = () => {
             />
             <NumberInput
               name="quantity"
-              labelText="Mennyiség"
+              value={quantity}
               minValue={1}
-              onChange={handleOrderDetailRelatedNumberChange}
+              labelText="Mennyiség"
               errorMessage="A mennyiség megadása kötelező."
+              onChange={handleOrderDetailRelatedNumberChange}
             />
             <Submit text="Hozzáadás" />
           </form>
