@@ -1,6 +1,6 @@
 import React from "react";
 
-import RoutingButton from "../components/common/routingButton";
+import Button from "../components/common/button";
 
 const Error = () => {
   return (
@@ -13,7 +13,7 @@ const Error = () => {
         internetkapcsolatot.
       </p>
       <p className="lead">
-        <RoutingButton text="Vissza a főoldalra" url="/" />
+        <Button text="Vissza a főoldalra" url="/" />
       </p>
     </div>
   );
