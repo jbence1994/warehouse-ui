@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 
-import RoutingButton from "../components/common/routingButton";
+import Button from "../components/common/button";
 import ProductCard from "../components/productCard";
 import CreateSupplyForm from "../components/createSupplyForm";
 
@@ -26,12 +26,12 @@ const Supplies = () => {
     <Fragment>
       <section className="row mb-3">
         <article className="col-sm-12 col-md-12 col-lg-4">
-          <RoutingButton text="Új termék hozzáadása" url="/termek/uj" />
+          <Button text="Új termék hozzáadása" url="/termek/uj" />
         </article>
       </section>
       <section className="row mb-3">
         <article className="col-sm-12 col-md-12 col-lg-4">
-          <RoutingButton text="Új kereskedő hozzáadása" url="/kereskedo/uj" />
+          <Button text="Új kereskedő hozzáadása" url="/kereskedo/uj" />
         </article>
       </section>
       <section className="row">
