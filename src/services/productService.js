@@ -10,4 +10,12 @@ const getProducts = async () => {
   return await restClient.get(endpointToCall);
 };
 
-export { getProducts };
+const createProduct = async (product) => {
+  const { API_ROOT, PRODUCTS } = endpoints;
+
+  const endpointToCall = `${API_ROOT}${PRODUCTS}`;
+
+  return await restClient.post(endpointToCall, product);
+};
+
+export { getProducts, createProduct };
