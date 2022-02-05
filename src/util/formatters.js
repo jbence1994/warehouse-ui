@@ -1,7 +1,7 @@
 const formatCurrency = (currency) => {
-  const formattedCurrency = { ...currency };
+  const formattedCurrency = { value: currency };
 
-  return formattedCurrency.append(".- Forint");
+  return `${formattedCurrency.value}.- Forint`;
 };
 
 const formatDate = (date) => {
