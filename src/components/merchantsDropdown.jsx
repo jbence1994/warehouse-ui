@@ -22,9 +22,9 @@ const MerchantsDropdown = ({ value, onChange }) => {
 
   return (
     <Dropdown
-      labelText="Kereskedő"
       name="merchantId"
       value={value}
+      labelText="Kereskedő"
       data={merchantKeyValuePairs}
       errorMessage="A kereskedő megadása kötelező."
       onChange={onChange}

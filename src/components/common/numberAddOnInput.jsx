@@ -3,9 +3,9 @@ import React, { Fragment } from "react";
 const NumberAddOnInput = ({
   name,
   value,
-  minValue = 1,
+  minValue,
   addOnText,
-  errorMessage,
+  errorMessage = "",
   onChange,
 }) => {
   return (
@@ -13,10 +13,11 @@ const NumberAddOnInput = ({
       <div className="input-group mb-3">
         <input
           type="number"
+          className="form-control"
+          id={name}
           name={name}
           value={value}
           min={minValue}
-          className="form-control"
           onChange={onChange}
         />
         <span className="input-group-text">{addOnText}</span>

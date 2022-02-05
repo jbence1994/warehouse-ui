@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-const Dropdown = ({ labelText, name, value, data, errorMessage, onChange }) => {
+const Dropdown = ({ name, value, labelText, data, errorMessage, onChange }) => {
   return (
     <Fragment>
       <div className="form-group">
