@@ -4,7 +4,7 @@ import TechniciansDropdown from "../components/techniciansDropdown";
 import ProductsDropdown from "../components/productsDropdown";
 import NumberInput from "../components/common/numberInput";
 import OrderDetailsListGroup from "../components/orderDetailsListGroup";
-import Submit from "../components/common/submit";
+import Button from "../components/common/button";
 
 const Orders = () => {
   const [order, setOrder] = useState({
@@ -66,13 +66,13 @@ const Orders = () => {
               errorMessage="A mennyiség megadása kötelező."
               onChange={handleOrderDetailRelatedNumberChange}
             />
-            <Submit text="Hozzáadás" />
+            <Button text="Hozzáadás" />
           </form>
         </article>
         <article className="col-sm-12 col-md-12 col-lg-6">
           <OrderDetailsListGroup collection={orderDetails} />
           <form onSubmit={handleSubmit} noValidate>
-            <Submit text="Vásárlás rögzítése" />
+            <Button text="Vásárlás rögzítése" />
           </form>
         </article>
       </section>
