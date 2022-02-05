@@ -91,7 +91,7 @@ const CreateProductForm = () => {
       {shouldShowSuccessModal && (
         <Modal
           title="Termék hozzáadása sikeres!"
-          content={`A(z) ${product.name} nevű termék sikeresen nyilvántartásba került.`}
+          content={`A(z) ${name} nevű termék sikeresen nyilvántartásba került.`}
           buttonText="Hozzáadás folytatása"
           routingButtonText="Vissza a raktárkészlethez"
           redirectUrl={suppliesPagePath}
@@ -101,7 +101,7 @@ const CreateProductForm = () => {
       {shouldShowErrorModal && (
         <Modal
           title="Termék hozzáadása sikertelen!"
-          content={`A(z) ${product.name} nevű termék nem került nyilvántartásba.`}
+          content={`A(z) ${name} nevű termék nem került nyilvántartásba.`}
           buttonText="OK"
           isSuccessModal={false}
           onClick={handleErrorModalClosed}
