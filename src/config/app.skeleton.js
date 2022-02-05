@@ -11,7 +11,11 @@ const pages = {
   },
   PRODUCTS_PAGE: {
     name: "Termékek",
-    path: "/termekek",
+    path: "/termek/uj",
+  },
+  MERCHANTS_PAGE: {
+    name: "Kereskedők",
+    path: "/kereskedo/uj",
   },
   ORDERS_PAGE: {
     name: "Vásárlás",
