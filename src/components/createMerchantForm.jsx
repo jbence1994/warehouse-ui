@@ -57,29 +57,33 @@ const CreateMerchantForm = () => {
     <Fragment>
       <form onSubmit={handleSubmit} noValidate>
         <TextInput
-          labelText="Kereskedő neve"
           name="name"
           value={name}
+          maxLength={255}
+          labelText="Kereskedő neve"
           errorMessage="A név megadása kötelező."
           onChange={handleTextChange}
         />
         <TextInput
-          labelText="Település"
           name="city"
           value={city}
+          maxLength={255}
+          labelText="Település"
           errorMessage="A település megadása kötelező."
           onChange={handleTextChange}
         />
         <TextInput
-          labelText="E-mail cím"
           name="email"
           value={email}
+          maxLength={255}
+          labelText="E-mail cím"
           onChange={handleTextChange}
         />
         <TextInput
-          labelText="Telefonszám"
           name="phone"
           value={phone}
+          maxLength={25}
+          labelText="Telefonszám"
           onChange={handleTextChange}
         />
         {/* TODO: disable button if price is zero or any required input is not filled. */}

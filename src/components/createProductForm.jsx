@@ -65,16 +65,18 @@ const CreateProductForm = () => {
     <Fragment>
       <form onSubmit={handleSubmit} noValidate>
         <TextInput
-          labelText="Termék neve"
           name="name"
           value={name}
+          maxLength={255}
+          labelText="Termék neve"
           errorMessage="A név megadása kötelező."
           onChange={handleTextChange}
         />
         <TextInput
-          labelText="Mennyiségi egység"
           name="unit"
           value={unit}
+          maxLength={255}
+          labelText="Mennyiségi egység"
           errorMessage="A mennyiségi egység megadása kötelező."
           onChange={handleTextChange}
         />
