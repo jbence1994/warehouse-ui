@@ -1,6 +1,13 @@
 import React, { Fragment } from "react";
 
-const NumberInput = ({ name, labelText, minValue, onChange, errorMessage }) => {
+const NumberInput = ({
+  name,
+  value,
+  minValue,
+  labelText,
+  errorMessage = "",
+  onChange,
+}) => {
   return (
     <Fragment>
       <div className="form-group">
@@ -8,8 +15,9 @@ const NumberInput = ({ name, labelText, minValue, onChange, errorMessage }) => {
         <input
           type="number"
           className="form-control"
-          name={name}
           id={name}
+          name={name}
+          value={value}
           min={minValue}
           onChange={onChange}
         />
