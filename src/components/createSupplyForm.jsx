@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 
 import NumberAddOnInput from "./common/numberAddOnInput";
-import Submit from "./common/submit";
+import Button from "./common/button";
 
 import { createSupply } from "../services/supplyService";
 
@@ -53,7 +53,8 @@ const CreateSupplyForm = ({ name, productId, availableQuantity, unit }) => {
             />
           </article>
           <article className="col-12">
-            <Submit text="Raktárkészlet növelése" />
+            {/* TODO: disable button if quantity is zero. */}
+            <Button text="Raktárkészlet növelése" />
           </article>
         </section>
       </form>

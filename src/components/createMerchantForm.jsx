@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 
 import TextInput from "./common/textInput";
-import Submit from "./common/submit";
+import Button from "./common/button";
 import Modal from "./common/modal";
 
 import { createMerchant } from "../services/merchantService";
@@ -82,7 +82,8 @@ const CreateMerchantForm = () => {
           value={phone}
           onChange={handleTextChange}
         />
-        <Submit text="Mentés" />
+        {/* TODO: disable button if price is zero or any required input is not filled. */}
+        <Button text="Mentés" />
       </form>
       {shouldShowSuccessModal && (
         <Modal

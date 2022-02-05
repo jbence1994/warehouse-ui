@@ -3,7 +3,7 @@ import React, { Fragment, useState } from "react";
 import TextInput from "./common/textInput";
 import NumberInput from "./common/numberInput";
 import MerchantsDropdown from "./merchantsDropdown";
-import Submit from "./common/submit";
+import Button from "./common/button";
 import Modal from "./common/modal";
 
 import { createProduct } from "../services/productService";
@@ -86,7 +86,8 @@ const CreateProductForm = () => {
           onChange={handleNumberChange}
         />
         <MerchantsDropdown value={merchantId} onChange={handleNumberChange} />
-        <Submit text="Mentés" />
+        {/* TODO: disable button if price is zero or any required input is not filled. */}
+        <Button text="Mentés" />
       </form>
       {shouldShowSuccessModal && (
         <Modal
