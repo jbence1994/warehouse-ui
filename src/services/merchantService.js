@@ -10,4 +10,12 @@ const getMerchantKeyValuePairs = async () => {
   return await restClient.get(endpointToCall);
 };
 
-export { getMerchantKeyValuePairs };
+const createMerchant = async (merchant) => {
+  const { API_ROOT, MERCHANTS } = endpoints;
+
+  const endpointToCall = `${API_ROOT}${MERCHANTS}`;
+
+  return await restClient.post(endpointToCall, merchant);
+};
+
+export { getMerchantKeyValuePairs, createMerchant };
