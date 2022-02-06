@@ -3,7 +3,7 @@ import React, { Fragment, useState } from "react";
 import TextInput from "./common/textInput";
 import NumberInput from "./common/numberInput";
 import MerchantsDropdown from "./merchantsDropdown";
-import Submit from "./common/submit";
+import Button from "./common/button";
 import Modal from "./common/modal";
 
 import { createProduct } from "../services/productService";
@@ -65,28 +65,34 @@ const CreateProductForm = () => {
     <Fragment>
       <form onSubmit={handleSubmit} noValidate>
         <TextInput
-          labelText="Termék neve"
+          type="text"
           name="name"
           value={name}
+          maxLength={255}
+          labelText="Termék neve"
           errorMessage="A név megadása kötelező."
           onChange={handleTextChange}
         />
         <TextInput
-          labelText="Mennyiségi egység"
+          type="text"
           name="unit"
           value={unit}
+          maxLength={255}
+          labelText="Mennyiségi egység"
           errorMessage="A mennyiségi egység megadása kötelező."
           onChange={handleTextChange}
         />
         <NumberInput
-          labelText="Ár"
           name="price"
           value={price}
+          minValue={1}
+          labelText="Ár"
           errorMessage="Az ár megadása kötelező."
           onChange={handleNumberChange}
         />
         <MerchantsDropdown value={merchantId} onChange={handleNumberChange} />
-        <Submit text="Mentés" />
+        {/* TODO: disable button if price is zero or any required input is not filled. */}
+        <Button text="Mentés" />
       </form>
       {shouldShowSuccessModal && (
         <Modal
