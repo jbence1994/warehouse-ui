@@ -8,7 +8,6 @@ import Merchants from "./pages/merchants";
 import Products from "./pages/products";
 import Supplies from "./pages/supplies";
 import Error from "./pages/error";
-import NotFound from "./pages/notFound";
 
 import pages, { APPLICATION_NAME } from "./config/app.skeleton";
 
@@ -21,7 +20,6 @@ const App = () => {
     MERCHANTS_PAGE,
     TECHNICIANS_PAGE,
     ORDERS_PAGE,
-    NOT_FOUND_PAGE,
     ERROR_PAGE,
   } = pages;
 
@@ -44,8 +42,7 @@ const App = () => {
           <Route exact path={PRODUCTS_PAGE.path} component={Products} />
           <Route exact path={SUPPLIES_PAGE.path} component={Supplies} />
           <Route exact path={ERROR_PAGE.path} component={Error} />
-          <Route exact path={NOT_FOUND_PAGE.path} component={NotFound} />
-          <Redirect to={NOT_FOUND_PAGE.path} />
+          <Redirect to={SUPPLIES_PAGE.path} />
         </Switch>
       </main>
     </BrowserRouter>
