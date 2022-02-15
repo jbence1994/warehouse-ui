@@ -9,7 +9,6 @@ import Products from "./pages/products";
 import Supplies from "./pages/supplies";
 import Error from "./pages/error";
 import NotFound from "./pages/notFound";
-import Home from "./pages/home";
 
 import pages, { APPLICATION_NAME } from "./config/app.skeleton";
 
@@ -17,7 +16,6 @@ import "./App.css";
 
 const App = () => {
   const {
-    HOME_PAGE,
     SUPPLIES_PAGE,
     PRODUCTS_PAGE,
     MERCHANTS_PAGE,
@@ -31,7 +29,7 @@ const App = () => {
     <BrowserRouter>
       <Navbar
         title={APPLICATION_NAME}
-        homeRoute={HOME_PAGE.path}
+        homeRoute={SUPPLIES_PAGE.path}
         routes={[
           { name: SUPPLIES_PAGE.name, path: SUPPLIES_PAGE.path },
           { name: TECHNICIANS_PAGE.name, path: TECHNICIANS_PAGE.path },
@@ -47,7 +45,6 @@ const App = () => {
           <Route exact path={SUPPLIES_PAGE.path} component={Supplies} />
           <Route exact path={ERROR_PAGE.path} component={Error} />
           <Route exact path={NOT_FOUND_PAGE.path} component={NotFound} />
-          <Route exact path={HOME_PAGE.path} component={Home} />
           <Redirect to={NOT_FOUND_PAGE.path} />
         </Switch>
       </main>
