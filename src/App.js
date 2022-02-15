@@ -29,7 +29,6 @@ const App = () => {
         title={APPLICATION_NAME}
         homeRoute={SUPPLIES_PAGE.path}
         routes={[
-          { name: SUPPLIES_PAGE.name, path: SUPPLIES_PAGE.path },
           { name: TECHNICIANS_PAGE.name, path: TECHNICIANS_PAGE.path },
           { name: ORDERS_PAGE.name, path: ORDERS_PAGE.path },
         ]}
