@@ -15,6 +15,7 @@ const CreateProductForm = () => {
     name: "",
     unit: "",
     price: 0,
+    availableQuantity: 0,
     merchantId: 0,
   });
 
@@ -56,7 +57,7 @@ const CreateProductForm = () => {
     setProduct(updatedProduct);
   };
 
-  const { name, unit, price, merchantId } = product;
+  const { name, unit, price, availableQuantity, merchantId } = product;
 
   const { SUPPLIES_PAGE } = pages;
   const { path: suppliesPagePath } = SUPPLIES_PAGE;
@@ -88,6 +89,13 @@ const CreateProductForm = () => {
           minValue={1}
           labelText="Ár"
           errorMessage="Az ár megadása kötelező."
+          onChange={handleNumberChange}
+        />
+        <NumberInput
+          name="availableQuantity"
+          value={availableQuantity}
+          minValue={0}
+          labelText="Mennyiség"
           onChange={handleNumberChange}
         />
         <MerchantsDropdown value={merchantId} onChange={handleNumberChange} />
