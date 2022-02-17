@@ -2,6 +2,8 @@
 
 Netsurf Távközlési Szolgáltató Kft. stock management application's ui.
 
+[![build](https://github.com/jbence1994/warehouse-ui/actions/workflows/build.yml/badge.svg)](https://github.com/jbence1994/warehouse-ui/actions/workflows/build.yml)
+
 ## Set up project locally
 
 ### Download third-party dependencies
