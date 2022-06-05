@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Card from "./common/card";
 
 import { uploadPhoto } from "../services/productPhotoService";
+import { formatCurrency } from "../util/formatters";
 
 import endpoints from "../config/api.endpoints";
 
@@ -39,7 +40,7 @@ const ProductCard = ({ product }) => {
   }
 
   const contents = [
-    { key: 1, value: `Ár: ${price}.- Forint` },
+    { key: 1, value: `Ár: ${formatCurrency(price)}` },
     { key: 2, value: `Kereskedő: ${merchantName}` },
   ];
 
