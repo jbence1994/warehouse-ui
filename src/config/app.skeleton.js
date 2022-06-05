@@ -21,6 +21,14 @@ const pages = {
     name: "Technikus info",
     path: "/technikus-info",
   },
+  TECHNICIAN_PAGE: {
+    name: "Technikus profil",
+    path: "/technikus/:id",
+  },
+  NOT_FOUND_PAGE: {
+    name: "A keresett oldal nem található",
+    path: "/notFound",
+  },
   ERROR_PAGE: {
     name: "Hiba történt",
     path: "/error",

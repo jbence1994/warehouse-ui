@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import Navbar from "./components/common/navbar";
 import Orders from "./pages/orders";
+import TechnicianProfile from "./pages/technicianProfile";
 import Technicians from "./pages/technicians";
 import Merchants from "./pages/merchants";
 import Products from "./pages/products";
@@ -18,6 +19,7 @@ const App = () => {
     SUPPLIES_PAGE,
     PRODUCTS_PAGE,
     MERCHANTS_PAGE,
+    TECHNICIAN_PAGE,
     TECHNICIANS_PAGE,
     ORDERS_PAGE,
     ERROR_PAGE,
@@ -36,6 +38,11 @@ const App = () => {
       <main className="container">
         <Switch>
           <Route exact path={ORDERS_PAGE.path} component={Orders} />
+          <Route
+            exact
+            path={TECHNICIAN_PAGE.path}
+            component={TechnicianProfile}
+          />
           <Route exact path={TECHNICIANS_PAGE.path} component={Technicians} />
           <Route exact path={MERCHANTS_PAGE.path} component={Merchants} />
           <Route exact path={PRODUCTS_PAGE.path} component={Products} />
